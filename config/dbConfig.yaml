@@ -1,4 +1,4 @@
-# config.yaml
+# dbConfig.yaml
 database:
   host: localhost
   port: 5432
@@ -6,5 +6,3 @@ database:
   password: root
   dbname: blog
 
-server:
-  port: 8080
