@@ -9,6 +9,8 @@ import (
 func SetAuthRoutes(router *mux.Router) {
 	router.HandleFunc("/api/auth/reg", controllers.RegisterHandler).Methods("POST")
 	router.HandleFunc("/api/auth/login/step1", controllers.LoginHandler).Methods("POST")
+	router.HandleFunc("/api/auth/refresh", controllers.RefreshTokenHandler).Methods("GET")
+	router.HandleFunc("/api/auth/logout", controllers.LogoutHandler).Methods("GET")
 	router.HandleFunc("/api/auth/login/step2", controllers.Login2Handler).Methods("POST")
 	router.HandleFunc("/api/auth/verify/{token}", controllers.VerifyHandler).Methods("GET")
 
