@@ -181,28 +181,24 @@ func createRefreshToken(userID string) (string, error) {
 	return refreshToken, nil
 }
 
-// createAccessToken создает access токен для указанного пользователя
-// createAccessToken создает access токен для указанного пользователя
 func createAccessToken(userID string) (string, error) {
+	// Создание токена
 	token := jwt.New(jwt.SigningMethodHS256)
+
+	// Создание клейма (payload) с данными о пользователе
 	claims := token.Claims.(jwt.MapClaims)
 	claims["user_id"] = userID
-	claims["exp"] = time.Now().Add(45 * time.Minute).Unix()
+	claims["exp"] = time.Now().Add(time.Minute * 45).Unix() // Время жизни токена - 45 минут
 
-	// Здесь необходимо использовать секретный ключ из конфигурации как []byte
-	secretKey := []byte(viper.GetString("jwt.secret"))
-
-	accessToken, err := token.SignedString(secretKey)
+	// Подпись токена с использованием переданного секретного ключа в виде строки
+	tokenString, err := token.SignedString([]byte("secret.key"))
 	if err != nil {
 		return "", err
 	}
 
-	return accessToken, nil
+	return tokenString, nil
 }
 
-// saveRefreshToken сохраняет refresh токен в базе данных
-// saveRefreshToken сохраняет refresh токен в базе данных
-// saveRefreshToken сохраняет refresh токен в базе данных.
 // Если уже существует запись с refresh токеном для указанного пользователя, она удаляется и создается новая запись.
 func saveRefreshToken(userID, refreshToken string) error {
 	db, err := sql.Open("postgres", getDBConnectionString())

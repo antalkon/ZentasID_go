@@ -26,6 +26,8 @@ func main() {
 
 	// Установка маршрутов из router/authRouter.go
 	router.SetAuthRoutes(r)
+	router.SetGetDataRoutes(r)
+	router.SetGetOtherRoutes(r)
 
 	// Установка порта для прослушивания
 	port := os.Getenv("PORT")
@@ -36,4 +38,5 @@ func main() {
 	// Запуск сервера
 	fmt.Printf("Сервер запущен на http://localhost:%s\n", port)
 	log.Fatal(http.ListenAndServe(":"+port, r))
+
 }

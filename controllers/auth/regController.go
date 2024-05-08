@@ -113,7 +113,7 @@ func generateJWTToken(userID string) (string, error) {
 	// Устанавливаем идентификатор пользователя в качестве утверждения
 	claims := token.Claims.(jwt.MapClaims)
 	claims["user_id"] = userID
-	claims["exp"] = time.Now().Add(time.Hour * 24).Unix() // Токен действителен 24 часа
+	claims["exp"] = time.Now().Add(time.Hour * 48).Unix() // Токен действителен 48 часа
 
 	// Подписываем токен с использованием секретного ключа
 	secretKey := []byte("your_secret_key")
