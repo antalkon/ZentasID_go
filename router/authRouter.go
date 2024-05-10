@@ -13,6 +13,8 @@ func SetAuthRoutes(router *mux.Router) {
 	router.HandleFunc("/api/auth/logout", auth.LogoutHandler).Methods("GET")
 	router.HandleFunc("/api/auth/login/step2", auth.Login2Handler).Methods("POST")
 	router.HandleFunc("/api/auth/verify/{token}", auth.VerifyHandler).Methods("GET")
+	//router.HandleFunc("/api/auth/login-link/{token}", auth.LinkLoginHandler).Methods("GET")
+	//router.HandleFunc("/login/link", auth.GenerateLinkLoginHandler)
 	router.HandleFunc("/api/auth/verifyac/new", auth.NewTokenHandler).Methods("GET")
 
 }

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <script src="https://yastatic.net/s3/passport-sdk/autofill/v1/sdk-suggest-with-polyfills-latest.js"></script>
+
+</head>
+<body>
+  <script>
+    window.YaAuthSuggest.init(
+            {
+              client_id: "e54804c4d9b74306b331e17354ce011b",
+              response_type: "token",
+              redirect_uri: "https://zentas.ru/home"
+            },
+            "https://zentas.ru",
+            {
+              view: "button",
+              parentId: "buttonContainerId",
+              buttonSize: 'xxl',
+              buttonView: 'main',
+              buttonTheme: 'light',
+              buttonBorderRadius: "24",
+              buttonIcon: 'ya',
+            }
+    )
+            .then(({handler}) => handler())
+            .then(data => console.log('Сообщение с токеном', data))
+            .catch(error => console.log('Обработка ошибки', error))
+  </script>
+</body>
+</html>
