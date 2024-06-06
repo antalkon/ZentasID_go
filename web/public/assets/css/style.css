@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+main{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+
+
+}
+.bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #323232;
+
+}
+.backGround{
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.5;
+
+}
+.loginBg{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.loginWindow{
+    position: relative;
+    min-width: 370px;
+    min-height: 600px;
+    max-height: 650px;
+    width: 27%;
+    height: 75%;
+    background: white;
+    border-radius: 4vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+.lHeader{
+    margin-top: 5%;
+    width: 100%;
+    min-height: 60px;
+    height: 10%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.lhLogo{
+    height: 40%;
+}
+.arrow{
+    position: absolute;
+    height: 24px;
+    left: 5%;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+
+
+.lMain{
+    width: 100%;
+    height: 85%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+}
+.lmTitle{
+    margin-top: 5px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 20px
+}
+.selectMethod{
+    margin-top: 10px;
+    width: 80%;
+    height: 60px;
+    border-radius: 17px;
+    border: 1px solid #cdcdcd;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.metBtns{
+    cursor: pointer;
+    width: 48.5%;
+    height: 92%;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+
+
+}
+.metBtns:hover{
+    background: #d6d6d6;
+
+
+}
+.metBtnsML{
+    margin-left: 1%;
+}
+.metBtnsMR{
+    margin-right: 1%;
+}
+.metBtnsActive{
+    background: #e8e8e8;
+}
+.inputFrame{
+    margin-top: 10px;
+    width: 80%;
+    height: 55px;
+    border-radius: 17px;
+    border: 1px solid #cdcdcd;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.countyFlag{
+    height: 50px;
+    width: 17%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+    border-radius: 15px;
+    font-size: 25px;
+}
+.inputFrame input:focus {
+    outline: none; /* Убираем обводку у вложенного input */
+}
+
+.inputFrame:focus-within {
+    border: 2px solid black; /* Добавляем рамку у .inputFrame при фокусировке на вложенном input */
+}
+
+.emailInp{
+    width: 90%;
+    height: 90%;
+    border: none;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: black;
+    outline: none;
+    font-size: 23px;
+}
+.phoneInp{
+    width: 80%;
+    height: 90%;
+    border: none;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: black;
+    background: none;
+    outline: none;
+    font-size: 23px;
+}
+
+.loginBtn{
+    margin-top: 10px;
+    cursor: pointer;
+    width: 80%;
+    height: 55px;
+    border-radius: 17px;
+    background-color: #292933;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Open Sans", sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    transition: background-color 0.3s ease; /* Плавное изменение цвета на протяжении 0.3 секунды */
+
+}
+.loginBtn:hover{
+    background-color: #18181e;
+}
+
+
+.loginBtn2{
+    margin-top: -5px;
+    cursor: pointer;
+    width: 80%;
+    height: 55px;
+    border-radius: 17px;
+    border: 1px solid #cdcdcd;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Open Sans", sans-serif;
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
+    transition: background-color 0.3s ease; /* Плавное изменение цвета на протяжении 0.3 секунды */
+
+}
+.loginBtn2:hover{
+    background-color: #f4f4f4;
+}
+.addLine{
+    margin-top: 10px;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.miniLoginBtns{
+    cursor: pointer;
+    width: 48%;
+    height: 55px;
+    border-radius: 17px;
+    border: 1px solid #cdcdcd;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: "Open Sans", sans-serif;
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
+    gap: 10px;
+    transition: background-color 0.3s ease; /* Плавное изменение цвета на протяжении 0.3 секунды */
+
+}
+.miniLoginBtns:hover{
+    background: #f4f4f4;
+}
+.miniLoginImg{
+    height: 40%;
+}
+.infoTxt{
+    width: 80%;
+    font-family: "Open Sans", sans-serif;
+    color: #dadada;
+    text-align: center;
+
+}
+.LearnMore1{
+    font-family: "Open Sans", sans-serif;
+    color: #ffffff;
+    font-weight: 400;
+}
+.LearnMore2{
+    cursor: pointer;
+    margin-top: -15px;
+    font-family: "Open Sans", sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+footer{
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.footerTitle{
+    margin-left: 10px;
+    font-family: "Open Sans", sans-serif;
+    color: #ffffff;
+    font-weight: 400;
+    text-decoration: none;
+}
+.footerLinks{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+}
+.suess{
+    height: 45%;
+    max-height: 150px;
+}
+.veridyEmailTxt{
+    font-family: "Open Sans", sans-serif;
+    color: #aeaeae;
+    font-weight: 400;
+    text-align: center;
+}
+.learnMore{
+    text-decoration: none;
+    color: white;
+}
