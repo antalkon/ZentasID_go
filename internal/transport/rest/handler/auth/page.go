@@ -9,7 +9,7 @@ import (
 )
 
 func AuthGetPage(c *gin.Context) {
-	staticDir := "web/public"
+	staticDir := "web/public/auth"
 
 	// Проверяем существование папки
 	if _, err := os.Stat(staticDir); os.IsNotExist(err) {
