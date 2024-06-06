@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/zentas.ico">
+    <script src="https://unpkg.com/imask"></script>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <main>
+        <div class="bg">
+            <img src="./assets/img/spb.jpg" alt="" class="backGround">
+        </div>
+        <div class="loginBg" id="loginBg">
+            <div class="loginWindow" id="loginWindow">
+                <div class="lHeader">
+                    <img src="./assets/img/logo.png" alt="" class="lhLogo">
+                    <img src="./assets/img/arrow.png" alt="" onclick="backMain()" class="arrow">
+                </div>
+                <div class="lMain" id="lMain">
+                    <h1 class="lmTitle">Войдите с Зентас ID</h1>
+                    <div class="selectMethod">
+                        <div class="metBtns metBtnsML metBtnsActive" id="mail">Почта</div>
+                        <div class="metBtns metBtnsMR " id="phone">Телефон</div>
+                    </div>
+                    <div class="inputFrame" id="frameLogin">
+                        <input type="email" class="emailInp" placeholder="Ваш email">
+                    </div>
+                    <div class="loginBtn" id="login1Btn">Войти</div>
+                    <div class="loginBtn2" id="createAcc">Создать ID</div>
+                    <div class="addLine">
+                        <div class="miniLoginBtns" id="qrBtn">
+                            <img src="./assets/img/qr.png" alt=""  class="miniLoginImg">
+                            QR-код
+                        </div>
+                        <div class="miniLoginBtns" id="moreBtn">
+                            Ещё
+                        </div>
+                    </div>
+                    <p class="infoTxt">Нажимая "Войти" - вы соглашаетесь с обработкой персональных данных</p>
+                </div>
+            </div>
+            <h2 class="LearnMore1">Зентас ID - ключ от всех сервисов</h2>
+            <h2 class="LearnMore2"><a class="learnMore" href="https://id.zentas.ru">Узнать больше</a></h2>
+        </div>
+    </main>
+    <footer>
+        <p class="footerTitle">Используйте режим инкогнито на чужом устройстве</p>
+        <div class="footerLinks">
+            <a class="footerTitle" style="cursor: pointer;" id="supportBtn">Справка и поддержка</a>
+            <a class="footerTitle" href="id.zentas.ru/copytight">© 2023-2024, Зентас</a>
+
+        </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/mask.js"></script>
+    <script src="assets/js/functions.js"></script>
+
+
+</body>
+</html>
