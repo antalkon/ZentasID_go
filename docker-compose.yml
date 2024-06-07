@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgree
+      POSTGRES_PASSWORD: qwerty
+      POSTGRES_DB: DB
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "8181:5432"
+
+  app:
+    build: .
+    container_name: go_app
+    environment:
+      DB_HOST: db
+      DB_USER: user
+      DB_PASSWORD: password
+      DB_NAME: database
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+volumes:
+  db_data:

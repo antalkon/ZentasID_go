@@ -11,7 +11,7 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 	auth := router.Group("/auth")
 	{
 		auth.GET("/", h.AuthPage)
-		auth.Static("/assets", "web/public/assets") // СТАТИК
+		auth.Static("/assets", "web/public/auth/assets") // СТАТИК
 
 	}
 
