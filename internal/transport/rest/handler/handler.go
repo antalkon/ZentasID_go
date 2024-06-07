@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"github.com/antalkon/ZentasID_go/internal/services/auth/reg"
 	"github.com/antalkon/ZentasID_go/internal/transport/rest/handler/auth"
 	"github.com/gin-gonic/gin"
 )
@@ -15,4 +16,7 @@ func NewHandler() *Handler {
 func (h *Handler) AuthPage(c *gin.Context) {
 	auth.AuthGetPage(c)
 
+}
+func (h *Handler) RegApi(c *gin.Context) {
+	reg.RegistrationApi(c)
 }

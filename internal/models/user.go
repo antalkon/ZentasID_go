@@ -3,12 +3,12 @@ package models
 import "time"
 
 type RegUser struct {
-	UserID    string    `db:"UserID"`
-	DisplayID int       `db:"DisplayId"`
-	Email     string    `db:"Email"`
-	Phone     string    `db:"Phone"`
-	Name      string    `db:"Name"`
-	Surname   string    `db:"Surname"`
-	JoinDate  time.Time `db:"JoinDate"`
-	Verify    bool      `db:"Verify"`
+	UserID    string    `json:"UserID"`
+	DisplayID int       `json:"DisplayId"`
+	Email     string    `json:"Email"`
+	Phone     string    `json:"Phone"`
+	Name      string    `json:"Name"`
+	Surname   string    `json:"Surname"`
+	JoinDate  time.Time `json:"JoinDate"`
+	Verify    bool      `json:"Verify"`
 }
