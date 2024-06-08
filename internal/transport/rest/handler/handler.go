@@ -24,3 +24,11 @@ func (h *Handler) RegApi(c *gin.Context) {
 func (h *Handler) RegVerify(c *gin.Context) {
 	reg.VerifyEmailApi(c)
 }
+
+func (h *Handler) SLoginS1(c *gin.Context) {
+	login.StdLoginStep1Api(c)
+}
+
+func (h *Handler) SLoginS2(c *gin.Context) {
+	login.StdLoginStep2Api(c)
+}
