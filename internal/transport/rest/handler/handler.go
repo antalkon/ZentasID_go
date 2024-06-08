@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"github.com/antalkon/ZentasID_go/internal/services/auth/login"
 	"github.com/antalkon/ZentasID_go/internal/services/auth/reg"
 	"github.com/antalkon/ZentasID_go/internal/transport/rest/handler/auth"
 	"github.com/gin-gonic/gin"
