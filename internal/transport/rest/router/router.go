@@ -15,7 +15,8 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 
 		authApi := auth.Group("/api")
 		{
-			authApi.POST("reg", h.RegApi)
+			authApi.POST("/reg", h.RegApi)
+			authApi.GET("/verify/:token", h.RegVerify)
 		}
 
 	}

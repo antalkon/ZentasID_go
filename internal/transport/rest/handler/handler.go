@@ -20,3 +20,7 @@ func (h *Handler) AuthPage(c *gin.Context) {
 func (h *Handler) RegApi(c *gin.Context) {
 	reg.RegistrationApi(c)
 }
+
+func (h *Handler) RegVerify(c *gin.Context) {
+	reg.VerifyEmailApi(c)
+}
