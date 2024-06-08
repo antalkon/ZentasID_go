@@ -13,6 +13,12 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 		auth.GET("/", h.AuthPage)
 		auth.Static("/assets", "web/public/auth/assets") // СТАТИК
 
+		authApi := auth.Group("/api")
+		{
+			authApi.POST("/reg", h.RegApi)
+			authApi.GET("/verify/:token", h.RegVerify)
+		}
+
 	}
 
 	return router
