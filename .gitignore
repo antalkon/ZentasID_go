@@ -1,3 +1,9 @@
 go.mod
 go.sum
 .env
+.gitignore
+TestWebServer.code-workspace
+Dockerfile
+docker-compose
+docker-compose.yml
+.gitignore
