@@ -7,15 +7,25 @@ import (
 
 	regapi_pg "github.com/antalkon/ZentasID_go/internal/database/postgres/regApi_pg"
 	"github.com/antalkon/ZentasID_go/internal/models"
+
+	// sendmail "github.com/antalkon/ZentasID_go/internal/services/sendMail"
+	jwt "github.com/antalkon/ZentasID_go/pkg/JWT"
+	"github.com/antalkon/ZentasID_go/pkg/UUID"
+	randnum "github.com/antalkon/ZentasID_go/pkg/randNum"
+
 	"github.com/gin-gonic/gin"
 )
 
 func RegistrationApi(c *gin.Context) {
-	// Here, assuming values like UserID, DisplayID, Verify, and JoinDate
-	// originate from somewhere within your application.
-	userID := "exampleUserID"
-	displayID := 2345 // Corrected data type
-	verify := true    // Corrected data type
+
+	userID, err := UUID.GenerateUserID()
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	displayID := randnum.GenerateRandomNumber()
+	verify := false
 	joinDate := time.Now()
 
 	var regUser models.RegUser
@@ -23,8 +33,6 @@ func RegistrationApi(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-
-	// Fill in the remaining fields of the RegUser structure from JSON data
 	regUser.UserID = userID
 	regUser.DisplayID = displayID
 	regUser.Verify = verify
@@ -37,8 +45,20 @@ func RegistrationApi(c *gin.Context) {
 	}
 	fmt.Println(joinDB)
 
+	verifyToken, err := jwt.GenerateToken(userID)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	// if err := sendmail.SendVerify(regUser.Email, verifyToken); err != nil {
+	// 	c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+	// 	return
+	// }
+
 	c.JSON(http.StatusOK, gin.H{
 		"message": "Success",
 		"userID":  regUser.UserID,
+		"Verify":  verifyToken,
 	})
 }

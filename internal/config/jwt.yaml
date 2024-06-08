@@ -1,0 +1,2 @@
+secret: "secret.key"
+methos: "SigningMethodHS256"
