@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"github.com/antalkon/ZentasID_go/internal/services/auth/login"
 	"github.com/antalkon/ZentasID_go/internal/services/auth/reg"
 	"github.com/antalkon/ZentasID_go/internal/transport/rest/handler/auth"
 	"github.com/gin-gonic/gin"
@@ -24,8 +23,4 @@ func (h *Handler) RegApi(c *gin.Context) {
 
 func (h *Handler) RegVerify(c *gin.Context) {
 	reg.VerifyEmailApi(c)
-}
-
-func (h *Handler) SLoginS1(c *gin.Context) {
-	login.StdLoginStep1Api(c)
 }
