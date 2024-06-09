@@ -15,11 +15,11 @@ func CheckUserLoginDBPhone(phone string) (*models.UserCheckPhone, error) {
 		return nil, errors.New("failed to connect to the database")
 	}
 
-	query := `SELECT userid, verify FROM users WHERE phone = $1`
+	query := `SELECT userid, verify, twofa FROM users WHERE phone = $1`
 	row := db.QueryRow(query, phone)
 
 	var user models.UserCheckPhone
-	err := row.Scan(&user.UserID, &user.Verify)
+	err := row.Scan(&user.UserID, &user.Verify, &user.TwoFa)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return nil, fmt.Errorf("user with phone %s not found", phone)
@@ -36,11 +36,11 @@ func CheckUserLoginDBEmail(email string) (*models.UserCheckEmail, error) {
 		return nil, errors.New("failed to connect to the database")
 	}
 
-	query := `SELECT userid, verify FROM users WHERE email = $1`
+	query := `SELECT userid, verify, twofa FROM users WHERE email = $1`
 	row := db.QueryRow(query, email)
 
 	var user models.UserCheckEmail
-	err := row.Scan(&user.UserID, &user.Verify)
+	err := row.Scan(&user.UserID, &user.Verify, &user.TwoFa)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return nil, fmt.Errorf("user with phone %s not found", email)

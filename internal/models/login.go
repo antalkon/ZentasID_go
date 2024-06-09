@@ -12,9 +12,11 @@ type SLoginS2 struct {
 type UserCheckPhone struct {
 	UserID string `json:"userid"`
 	Verify bool   `json:"verify"`
+	TwoFa  bool   `json:"twofa"`
 }
 
 type UserCheckEmail struct {
 	UserID string `json:"userid"`
 	Verify bool   `json:"verify"`
+	TwoFa  bool   `json:"twofa"`
 }
