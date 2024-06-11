@@ -19,6 +19,7 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 			authApi.GET("/verify/:token", h.RegVerify)
 			authApi.POST("/login/standart/step1", h.SLoginS1)
 			authApi.POST("/login/standart/step2", h.SLoginS2)
+			authApi.GET("/logout", h.Logout)
 
 		}
 

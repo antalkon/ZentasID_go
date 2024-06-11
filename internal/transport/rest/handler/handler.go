@@ -33,3 +33,7 @@ func (h *Handler) SLoginS1(c *gin.Context) {
 func (h *Handler) SLoginS2(c *gin.Context) {
 	login.StdLoginStep2Api(c)
 }
+
+func (h *Handler) Logout(c *gin.Context) {
+	login.Logout(c)
+}
