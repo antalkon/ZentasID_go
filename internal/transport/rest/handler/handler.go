@@ -13,27 +13,38 @@ func NewHandler() *Handler {
 	return &Handler{}
 }
 
-// func (h *Handler) AddNewPc(c *gin.Context)    {}
+// Страница входа
 func (h *Handler) AuthPage(c *gin.Context) {
 	auth.AuthGetPage(c)
 
 }
+
+// Регистраци
 func (h *Handler) RegApi(c *gin.Context) {
 	reg.RegistrationApi(c)
 }
 
+// Верификация почты пос.рег
 func (h *Handler) RegVerify(c *gin.Context) {
 	reg.VerifyEmailApi(c)
 }
 
+// Логин 1 шаг
 func (h *Handler) SLoginS1(c *gin.Context) {
 	login.StdLoginStep1Api(c)
 }
 
+// Логин 2 шаг
 func (h *Handler) SLoginS2(c *gin.Context) {
 	login.StdLoginStep2Api(c)
 }
 
+// Выход
 func (h *Handler) Logout(c *gin.Context) {
 	login.Logout(c)
+}
+
+// Логин с помощью ВК
+func (h *Handler) VKLogin(c *gin.Context) {
+	login.LoginVK(c)
 }

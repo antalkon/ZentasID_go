@@ -20,3 +20,20 @@ type UserCheckEmail struct {
 	Verify bool   `json:"verify"`
 	TwoFa  bool   `json:"twofa"`
 }
+
+type PayloadVK struct {
+	Token string `json:"token"`
+	UUID  string `json:"uuid"`
+}
+
+type AccessTokenResponseVK struct {
+	AccessToken    string `json:"access_token"`
+	AccessTokenID  string `json:"access_token_id"`
+	UserID         int    `json:"user_id"`
+	Phone          string `json:"phone"`
+	PhoneValidated int    `json:"phone_validated"`
+	IsService      bool   `json:"is_service"`
+	Email          string `json:"email"`
+	Source         int    `json:"source"`
+	SourceDesc     string `json:"source_description"`
+}
