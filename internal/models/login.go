@@ -20,3 +20,37 @@ type UserCheckEmail struct {
 	Verify bool   `json:"verify"`
 	TwoFa  bool   `json:"twofa"`
 }
+
+type PayloadVK struct {
+	Token string `json:"token"`
+	UUID  string `json:"uuid"`
+}
+
+type AccessTokenResponseVK struct {
+	AccessToken    string `json:"access_token"`
+	AccessTokenID  string `json:"access_token_id"`
+	UserID         int    `json:"user_id"`
+	Phone          string `json:"phone"`
+	PhoneValidated int    `json:"phone_validated"`
+	IsService      bool   `json:"is_service"`
+	Email          string `json:"email"`
+	Source         int    `json:"source"`
+	SourceDesc     string `json:"source_description"`
+}
+type YandexTokenResponse struct {
+	AccessToken string `json:"access_token"`
+	TokenType   string `json:"token_type"`
+	ExpiresIn   int    `json:"expires_in"`
+}
+
+type YandexUserInfo struct {
+	ID            string `json:"id"`
+	Login         string `json:"login"`
+	FirstName     string `json:"first_name"`
+	LastName      string `json:"last_name"`
+	DefaultEmail  string `json:"default_email"`
+	IsAvatarEmpty bool   `json:"is_avatar_empty"`
+	DefaultPhone  struct {
+		Number string `json:"number"`
+	} `json:"default_phone"`
+}

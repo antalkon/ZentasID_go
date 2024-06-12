@@ -12,6 +12,8 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 	{
 		auth.GET("/", h.AuthPage)
 		auth.Static("/assets", "web/public/auth/assets") // СТАТИК
+		auth.Static("/vk", "web/public/auth/vk")         // СТАТИК
+		auth.Static("/yandex", "web/public/auth/yandex") // СТАТИК
 
 		authApi := auth.Group("/api")
 		{
@@ -20,6 +22,8 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 			authApi.POST("/login/standart/step1", h.SLoginS1)
 			authApi.POST("/login/standart/step2", h.SLoginS2)
 			authApi.GET("/logout", h.Logout)
+			// authApi.GET("/login/vk", h.VKLogin)
+			// authApi.GET("/login/yandex", h.YandexLogin)
 
 		}
 
