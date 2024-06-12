@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Извлекаем токен из хэша URL
+        const token = window.location.hash.substring(14).split('&')[0]; // Предполагается, что токен начинается с позиции 14 и заканчивается до следующего символа '&'
+
+        // Отправляем токен на сервер
+        fetch('http://localhost:8080/auth/api/login/yandex?token=' + token)
+        .then(response => response.json())
+        .then(data => {
+            console.log('Ответ сервера:', data);
+            // Далее можно обрабатывать ответ сервера, например, отображать информацию о пользователе или выполнять другие действия
+        })
+        .catch(error => console.error('Ошибка:', error));
+
+    </script>
+</body>
+</html>

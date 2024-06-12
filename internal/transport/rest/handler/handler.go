@@ -48,3 +48,8 @@ func (h *Handler) Logout(c *gin.Context) {
 func (h *Handler) VKLogin(c *gin.Context) {
 	login.LoginVK(c)
 }
+
+// Логин с помощью Яндекс
+func (h *Handler) YandexLogin(c *gin.Context) {
+	login.LoginYandex(c)
+}

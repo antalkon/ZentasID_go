@@ -37,3 +37,20 @@ type AccessTokenResponseVK struct {
 	Source         int    `json:"source"`
 	SourceDesc     string `json:"source_description"`
 }
+type YandexTokenResponse struct {
+	AccessToken string `json:"access_token"`
+	TokenType   string `json:"token_type"`
+	ExpiresIn   int    `json:"expires_in"`
+}
+
+type YandexUserInfo struct {
+	ID            string `json:"id"`
+	Login         string `json:"login"`
+	FirstName     string `json:"first_name"`
+	LastName      string `json:"last_name"`
+	DefaultEmail  string `json:"default_email"`
+	IsAvatarEmpty bool   `json:"is_avatar_empty"`
+	DefaultPhone  struct {
+		Number string `json:"number"`
+	} `json:"default_phone"`
+}
