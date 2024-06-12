@@ -23,7 +23,7 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 			authApi.POST("/login/standart/step2", h.SLoginS2)
 			authApi.GET("/logout", h.Logout)
 			// authApi.GET("/login/vk", h.VKLogin)
-			authApi.GET("/login/yandex", h.YandexLogin)
+			// authApi.GET("/login/yandex", h.YandexLogin)
 
 		}
 
