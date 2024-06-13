@@ -1,4 +1,4 @@
-package loginApi_pg
+package refreshApi_pg
 
 import (
 	"errors"
@@ -7,32 +7,35 @@ import (
 	"github.com/antalkon/ZentasID_go/pkg/connectDB"
 )
 
-func SaveRefreshToken(id, token string) error {
+func CheckRefresh(token string) error {
 	db := connectDB.GetDB()
 	if db == nil {
 		return errors.New("failed to connect to the database")
 	}
-
 	// Проверка наличия строки с указанным userId
 	var exists bool
-	checkQuery := `SELECT EXISTS(SELECT 1 FROM refreshTokens WHERE userId = $1)`
-	err := db.QueryRow(checkQuery, id).Scan(&exists)
+	checkQuery := `SELECT EXISTS(SELECT 1 FROM refreshTokens WHERE token = $1)`
+	err := db.QueryRow(checkQuery, token).Scan(&exists)
 	if err != nil {
 		return fmt.Errorf("error checking existing token: %v", err)
 	}
-
-	// Если строка существует, удалить её
 	if exists {
-		deleteQuery := `DELETE FROM refreshTokens WHERE userId = $1`
-		_, err = db.Exec(deleteQuery, id)
+		deleteQuery := `DELETE FROM refreshTokens WHERE token = $1`
+		_, err = db.Exec(deleteQuery, token)
 		if err != nil {
 			return fmt.Errorf("error deleting existing token: %v", err)
 		}
 	}
+	return nil
+}
 
-	// Вставка новой строки с userId, token и текущей меткой времени
+func SvaeNewRefresh(id, token string) error {
+	db := connectDB.GetDB()
+	if db == nil {
+		return errors.New("failed to connect to the database")
+	}
 	insertQuery := `INSERT INTO refreshTokens (userId, token) VALUES ($1, $2)`
-	_, err = db.Exec(insertQuery, id, token)
+	_, err := db.Exec(insertQuery, id, token)
 	if err != nil {
 		return fmt.Errorf("error inserting new token: %v", err)
 	}

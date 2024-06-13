@@ -4,11 +4,11 @@ import (
 	"errors"
 	"fmt"
 
-	connectdb "github.com/antalkon/ZentasID_go/pkg/connectdb"
+	"github.com/antalkon/ZentasID_go/pkg/connectDB"
 )
 
 func Save2FaToken(id, token string) error {
-	db := connectdb.GetDB()
+	db := connectDB.GetDB()
 	if db == nil {
 		return errors.New("failed to connect to the database")
 	}
