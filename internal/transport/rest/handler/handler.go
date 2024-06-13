@@ -3,6 +3,7 @@ package handler
 import (
 	"github.com/antalkon/ZentasID_go/internal/services/auth/login"
 	"github.com/antalkon/ZentasID_go/internal/services/auth/reg"
+	"github.com/antalkon/ZentasID_go/internal/services/refreshToken"
 	"github.com/antalkon/ZentasID_go/internal/transport/rest/handler/auth"
 	"github.com/gin-gonic/gin"
 )
@@ -52,4 +53,19 @@ func (h *Handler) VKLogin(c *gin.Context) {
 // Логин с помощью Яндекс
 func (h *Handler) YandexLogin(c *gin.Context) {
 	login.LoginYandex(c)
+}
+
+// Создание QR lofin session
+func (h *Handler) QrLoginGen(c *gin.Context) {
+	login.GenerateLinkLogin(c)
+}
+
+// QR login link
+func (h *Handler) QrLoginGet(c *gin.Context) {
+	login.GetLinkDivice(c)
+}
+
+// Refresh Tokens
+func (h *Handler) RefreshToken(c *gin.Context) {
+	refreshToken.RefreshToken(c)
 }

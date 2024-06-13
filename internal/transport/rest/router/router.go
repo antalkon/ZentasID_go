@@ -24,6 +24,9 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 			authApi.GET("/logout", h.Logout)
 			// authApi.GET("/login/vk", h.VKLogin)
 			// authApi.GET("/login/yandex", h.YandexLogin)
+			authApi.POST("/login/qr", h.QrLoginGen)
+			authApi.GET("/login/qr/authorization/:token", h.QrLoginGet)
+			authApi.GET("/refresh", h.RefreshToken)
 
 		}
 

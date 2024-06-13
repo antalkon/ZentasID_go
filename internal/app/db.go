@@ -6,11 +6,11 @@ import (
 	"log"
 	"time"
 
-	"github.com/antalkon/ZentasID_go/pkg/connectdb"
+	"github.com/antalkon/ZentasID_go/pkg/connectDB"
 )
 
 func Db(env, comment string) (string, error) {
-	DB := connectdb.GetDB()
+	DB := connectDB.GetDB()
 	if DB == nil {
 		log.Fatal("Ошибка при инициализации базы данных")
 		return "", fmt.Errorf("ошибка при инициализации базы данных")

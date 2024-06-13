@@ -8,7 +8,7 @@ import (
 	"github.com/antalkon/ZentasID_go/internal/transport/rest/handler"
 	"github.com/antalkon/ZentasID_go/internal/transport/rest/router"
 	"github.com/antalkon/ZentasID_go/pkg/config"
-	"github.com/antalkon/ZentasID_go/pkg/connectdb"
+	"github.com/antalkon/ZentasID_go/pkg/connectDB"
 )
 
 func Main() {
@@ -20,7 +20,7 @@ func Main() {
 	log.Info("Starting app", slog.String("env", cfg.Env))
 
 	// Initialize database
-	connectdb.InitDB()
+	connectDB.InitDB()
 	connection, err := Db(cfg.Env, "development")
 	if err != nil {
 		log2.Fatalf("Ошибка при подключении к базе данных %v", err)

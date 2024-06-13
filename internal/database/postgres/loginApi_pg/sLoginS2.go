@@ -5,11 +5,11 @@ import (
 	"errors"
 	"fmt"
 
-	connectdb "github.com/antalkon/ZentasID_go/pkg/connectdb"
+	"github.com/antalkon/ZentasID_go/pkg/connectDB"
 )
 
 func CheckCodeLogin(id string) (string, error) {
-	db := connectdb.GetDB()
+	db := connectDB.GetDB()
 	if db == nil {
 		return "", errors.New("failed to connect to the database")
 	}
@@ -29,7 +29,7 @@ func CheckCodeLogin(id string) (string, error) {
 	return code, nil
 }
 func DelTempCode(id string) error {
-	db := connectdb.GetDB()
+	db := connectDB.GetDB()
 	if db == nil {
 		return errors.New("failed to connect to the database")
 	}

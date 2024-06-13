@@ -6,11 +6,11 @@ import (
 	"fmt"
 
 	"github.com/antalkon/ZentasID_go/internal/models"
-	connectdb "github.com/antalkon/ZentasID_go/pkg/connectdb"
+	"github.com/antalkon/ZentasID_go/pkg/connectDB"
 )
 
 func CheckUserLoginDBPhone(phone string) (*models.UserCheckPhone, error) {
-	db := connectdb.GetDB()
+	db := connectDB.GetDB()
 	if db == nil {
 		return nil, errors.New("failed to connect to the database")
 	}
@@ -31,7 +31,7 @@ func CheckUserLoginDBPhone(phone string) (*models.UserCheckPhone, error) {
 }
 
 func CheckUserLoginDBEmail(email string) (*models.UserCheckEmail, error) {
-	db := connectdb.GetDB()
+	db := connectDB.GetDB()
 	if db == nil {
 		return nil, errors.New("failed to connect to the database")
 	}
