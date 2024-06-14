@@ -1,6 +1,6 @@
-host: '127.0.0.1'
-port: '8181'
-user: 'postgree'
+host: 'localhost'
+port: '5432'
+user: 'postgres'
 sslMode: 'disable'
 dbname: 'ID'
 

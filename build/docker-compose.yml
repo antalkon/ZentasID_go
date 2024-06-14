@@ -1,0 +1,34 @@
+version: '3.8'  # Указание версии Docker Compose
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./configs:/app/configs  # Примонтировать локальную директорию configs в контейнер
+    networks:
+      - zentas-id
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+
+networks:
+  zentas-id:
+    external: true  # Указание на использование внешней сети
+
+# zentas_id_db:
+#   image: zentas_id_db_1.0
+#   networks:
+#     - zentas-id
+#   ports:
+#     - "8181:5432"
+#   environment:
+#     - POSTGRES_USER=postgres
+#     - POSTGRES_PASSWORD=qwerty
+#     - POSTGRES_DB=ID
+#   dns:
+#     - 8.8.8.8
+#     - 8.8.4.4
