@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+    <div class="errorAlert" id="errAlert">
+        <h class="eaTxt" id="errTxt">Error</h>
+    </div>
     <main>
         <div class="bg">
             <img src="./assets/img/spb.jpg" alt="" class="backGround">
@@ -30,7 +33,7 @@
                         <div class="metBtns metBtnsMR " id="phone">Телефон</div>
                     </div>
                     <div class="inputFrame" id="frameLogin">
-                        <input type="email" class="emailInp" placeholder="Ваш email">
+                        <input type="email" class="emailInp" id="y_email" placeholder="Ваш email">
                     </div>
                     <div class="loginBtn" id="login1Btn">Войти</div>
                     <div class="loginBtn2" id="createAcc">Создать ID</div>
@@ -58,9 +61,14 @@
 
         </div>
     </footer>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/error.js"></script>
+
     <script src="assets/js/script.js"></script>
     <script src="assets/js/mask.js"></script>
     <script src="assets/js/functions.js"></script>
+   
+    
 
 
 </body>

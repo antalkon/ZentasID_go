@@ -9,7 +9,7 @@ let next3;
 let next4;
 let next5;
 
-
+let methidTrue = false;
 let phoneNumber;
 let emailAdress;
 let userName;
@@ -19,7 +19,7 @@ let birthdayDate;
 phoneBtn.addEventListener('click', function(){
     phoneBtn.classList.add('metBtnsActive')
     emailBtn.classList.remove('metBtnsActive')
-
+    methidTrue = true
     frame.innerHTML = ''
     frame.innerHTML = `
                                 <div class="countyFlag">🇷🇺</div>
@@ -40,6 +40,7 @@ emailBtn.addEventListener('click', function(){
     frame.innerHTML = `
         <input type="email" class="emailInp" placeholder="Ваш email">
     `
+    methidTrue = false
 
 })
 
@@ -240,21 +241,17 @@ function support() {
         `;
 }
 
-function codeLogin(){
-    mainl.innerHTML = '';
-    lWind.style.height = '30%';
-    lWind.style.minHeight = '300px';
-    lWind.style.maxHeight = '350px';
-    mainl.innerHTML = `
-        <h1 class="lmTitle">4-х значный код</h1>
-        <div class="inputFrame" id="frameLogin">
-            <input type="text" class="emailInp"  id="tempCode" placeholder="Введите код">
-        </div>
-        
-        <div class="loginBtn" id="next5" ">Вход</div>`
+function codeLoginEmail(){
+    console.log("test")
+    if (methidTrue === true) {
+        loginStep1Phone()
+    }
+    if (methidTrue === false) {
+        loginStep1Email()
+    }
 
 }
 document.getElementById("supportBtn").addEventListener("click", support);
 document.getElementById("qrBtn").addEventListener("click", errorMethod);
 document.getElementById("moreBtn").addEventListener("click", moreMethod);
-document.getElementById("login1Btn").addEventListener("click", codeLogin);
+document.getElementById("login1Btn").addEventListener("click", codeLoginEmail);

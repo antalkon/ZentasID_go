@@ -1,4 +1,4 @@
-host: 'localhost'
+host: '94.241.143.194'
 port: '5432'
 user: 'postgres'
 sslMode: 'disable'
