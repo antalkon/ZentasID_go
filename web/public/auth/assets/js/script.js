@@ -10,6 +10,7 @@ let next4;
 let next5;
 
 let methidTrue = false;
+
 let phoneNumber;
 let emailAdress;
 let userName;
@@ -155,7 +156,9 @@ function nextPhase4(){
 function sendLogin(){
     birthdayDate = document.getElementById('birthDate').value
     console.log(phoneNumber, emailAdress, userName, userSurname, birthdayDate)
-    return
+    registrationFinal()
+
+
 }
 function nextPhase5(){
     next5.addEventListener('click', function (){
@@ -173,6 +176,7 @@ function nextPhase5(){
         <div class="loginBtn" id="next5" onclick="location.reload()">Вход</div>
         `;
         next5 = document.getElementById('next5');
+
         // nextPhase5()
     });
 }
