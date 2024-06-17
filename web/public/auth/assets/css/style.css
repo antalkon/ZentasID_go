@@ -323,3 +323,29 @@ footer{
     text-decoration: none;
     color: white;
 }
+
+
+.errorAlert {
+    z-index: 1000;
+    position: fixed;
+    left: 50%; 
+    transform: translateX(-50%); 
+    max-width: 40%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: rgb(58, 47, 47);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    bottom: 2%;
+}
+
+.eaTxt{
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+
+
+}
