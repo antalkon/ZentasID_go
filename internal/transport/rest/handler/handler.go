@@ -4,6 +4,7 @@ import (
 	"github.com/antalkon/ZentasID_go/internal/services/auth/login"
 	"github.com/antalkon/ZentasID_go/internal/services/auth/reg"
 	"github.com/antalkon/ZentasID_go/internal/services/refreshToken"
+	userdata "github.com/antalkon/ZentasID_go/internal/services/userData"
 	"github.com/antalkon/ZentasID_go/internal/transport/rest/handler/auth"
 	"github.com/gin-gonic/gin"
 )
@@ -68,4 +69,9 @@ func (h *Handler) QrLoginGet(c *gin.Context) {
 // Refresh Tokens
 func (h *Handler) RefreshToken(c *gin.Context) {
 	refreshToken.RefreshToken(c)
+}
+
+// User Info
+func (h *Handler) UserInfo(c *gin.Context) {
+	userdata.UserInfo(c)
 }

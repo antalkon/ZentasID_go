@@ -31,6 +31,13 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 		}
 
 	}
+	data := router.Group("/data")
+	{
+		dataApi := data.Group("/api")
+		{
+			dataApi.POST("/info", h.UserInfo)
+		}
+	}
 
 	return router
 }
