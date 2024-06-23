@@ -7,6 +7,8 @@ import (
 
 func SetupRouter(h *handler.Handler) *gin.Engine {
 	router := gin.New()
+	router.GET("/", h.HomePage)
+	router.Static("/assets", "web/public/personal/assets")
 
 	auth := router.Group("/auth")
 	{
