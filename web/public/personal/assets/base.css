@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+menu {
+    width: 20%;
+    height: 100%;
+    background-color: black;
+}
+
+main {
+    width: 80%;
+    height: 100%;
+    background-color: #D7DFEB;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+header {
+    width: 100%;
+    height: 10%;
+    box-shadow: 0 2px 1px 0 rgb(186, 185, 185);
+}
+
+.HeaderContent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hTitle {
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-left: 20px;
+}
+
+.hFuncLine{
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 2%;
+    margin-right: 20px;
+}
+
+.hSearchBox{
+    width: 45%;
+    height: 55%;
+    background-color: white;
+    border-radius: 50px;
+    padding-left: 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+.hSearch {
+    width: 80%;
+    height: 90%;
+    border: none;
+    color: #d1d1d1;
+    background: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    outline: none; /* Убирает рамку при фокусе */
+}
+
+/* Убираем стили при фокусе */
+.hSearch:focus,
+.hSearch:active {
+    border: none;
+    outline: none;
+    box-shadow: none; /* Убирает тень при фокусе */
+    background-color: transparent; /* Убирает цвет фона при фокусе */
+    color: inherit; /* Оставляет цвет текста таким же, как в исходном состоянии */
+}
+
+.hSearchIcon{
+    height: 40%;
+}
+
+.hNotify{
+    cursor: pointer;
+    position: relative;
+    height: 55%;
+    width: auto;
+    aspect-ratio: 1/1; 
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50px;
+    transition: background-color 0.2s ease; /* Плавное изменение цвета за 0.5 секунды */
+}
+.hNotify:hover{
+    background-color: rgb(230, 230, 230);
+}
+
+.hnImg{
+    height: 50%;
+}
+.hUser{
+    cursor: pointer;
+    height: 55%;
+    width: 25%;
+    border-radius: 50px;
+    padding: 0 3px;
+    background-color: white;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.2s ease; /* Плавное изменение цвета за 0.5 секунды */
+
+
+}
+.hUser:hover{
+    background-color: rgb(230, 230, 230);
+
+}
+.huLeft{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+.huAva{
+    height: 90%;
+    border-radius: 50px;
+}
+
+.hulText{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: -3px;
+}
+
+.hulName{
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+.hulSurname{
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 0.8em;
+}
+
+.huDown{
+    height: 60%;
+    margin-right: 5%;
+}

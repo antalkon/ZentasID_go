@@ -6,6 +6,7 @@ import (
 	"github.com/antalkon/ZentasID_go/internal/services/refreshToken"
 	userdata "github.com/antalkon/ZentasID_go/internal/services/userData"
 	"github.com/antalkon/ZentasID_go/internal/transport/rest/handler/auth"
+	"github.com/antalkon/ZentasID_go/internal/transport/rest/handler/personal"
 	"github.com/gin-gonic/gin"
 )
 
@@ -74,4 +75,9 @@ func (h *Handler) RefreshToken(c *gin.Context) {
 // User Info
 func (h *Handler) UserInfo(c *gin.Context) {
 	userdata.UserInfo(c)
+}
+
+// UPersona; hoeme
+func (h *Handler) HomePage(c *gin.Context) {
+	personal.HomePage(c)
 }
