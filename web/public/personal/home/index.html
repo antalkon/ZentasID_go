@@ -8,6 +8,27 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
 </head>
 <body>
+    <div class="WindowSetting" id="profileWindow">
+        <div class="wsBox">
+            <div class="wsbUser">
+                <img src="./assets/avatar.jpeg" alt="" class="wsbAva">
+                
+                <div class="wsbText">
+                    <p class="wsbName">Алексей</p>
+                    <p class="wsbName">Антипьев</p>
+                </div>
+                <p class="wsbID">ID: <span class="uID">000001</span></p>
+    
+            </div>
+            <div class="wsBtnBox">
+                <div class="wsbSetting">Изменить</div>
+                <div class="wsbSupport">Поддержка</div>
+                <div class="wsbLogout">Вход</div>
+
+
+            </div>
+        </div>
+    </div>
     <menu>
         
     </menu>
@@ -24,7 +45,7 @@
                     <div class="hNotify">
                         <img src="./assets/business.png" alt="" class="hnImg">
                     </div>
-                    <div class="hUser">
+                    <div class="hUser" id="profile">
                         <div class="huLeft">
                             <img src="./assets/avatar.jpeg" alt="" class="huAva">
                             <div class="hulText">
@@ -32,12 +53,13 @@
                                 <p class="hulSurname">Антипьев</p>
                             </div>
                         </div>
-                        <img src="./assets/down.png" alt="" class="huDown">
+                        <img src="./assets/down.png" alt="" id="OpenImg" class="huDown">
 
                     </div>
                 </div>
             </div>
         </header>
     </main>
+    <script src="./assets/header.js"></script>
 </body>
 </html>
