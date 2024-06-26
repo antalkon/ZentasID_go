@@ -38,6 +38,16 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 		dataApi := data.Group("/api")
 		{
 			dataApi.POST("/info", h.UserInfo)
+			dataApi.PUT("/avatar", h.UpdateUserAvatar)
+			dataApi.POST("/avatar", h.GetUserAvatar)
+		}
+	}
+	storage := router.Group("/storage")
+	{
+		usersData := storage.Group("/user")
+		{
+			usersData.Static("/avatars", "storage/users/avatar")
+
 		}
 	}
 
