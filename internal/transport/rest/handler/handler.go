@@ -81,3 +81,9 @@ func (h *Handler) UserInfo(c *gin.Context) {
 func (h *Handler) HomePage(c *gin.Context) {
 	personal.HomePage(c)
 }
+
+// Edit user Avatar
+func (h *Handler) UpdateUserAvatar(c *gin.Context) {
+	userdata.UserEditAvatar(c)
+
+}
