@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
 .then(function(res) {
     if (!res.ok) {
       // Если статус ответа не ок, создаём и бросаем ошибку с сообщением о статусе
-      throw new Error(`HTTP error! Status: ${res.status}`);
       document.getElementById("wsbAvai").src = './assets/avatar.jpeg';
+
+      throw new Error(`HTTP error! Status: ${res.status}`);
 
     }
     return res.json(); // Предполагаем, что ответ в формате JSON
@@ -20,8 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
   .then(function(res) {
     if (!res.avatar) {
       // Если параметр "avatar" отсутствует в ответе, бросаем ошибку
-      throw new Error("Expected parameter 'avatar' not found in response.");
       document.getElementById("wsbAvai").src = './assets/avatar.jpeg';
+
+      throw new Error("Expected parameter 'avatar' not found in response.");
 
     }
     avatar = res.avatar; // Извлекаем значение "avatar" и сохраняем его в переменную
