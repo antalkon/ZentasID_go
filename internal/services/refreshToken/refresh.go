@@ -47,6 +47,9 @@ func RefreshToken(c *gin.Context) {
 
 	c.SetCookie("access_token", accessToken, 24*60*60, "/", "localhost", false, true)
 	c.SetCookie("refresh_token", refreshToken, 31*24*60*60, "/", "localhost", false, true)
-
-	// Дополнительные действия, если необходимо
+	referer := c.Request.Referer()
+	if referer == "" {
+		referer = "/"
+	}
+	c.Redirect(http.StatusFound, referer)
 }
