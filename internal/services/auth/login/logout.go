@@ -22,4 +22,5 @@ func Logout(c *gin.Context) {
 		// Отправляем куки с отрицательным временем жизни, чтобы браузер удалил их
 		http.SetCookie(c.Writer, &expiredCookie)
 	}
+	c.Redirect(http.StatusMovedPermanently, "/auth")
 }
