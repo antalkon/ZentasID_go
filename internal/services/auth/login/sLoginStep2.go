@@ -53,6 +53,7 @@ func StdLoginStep2Api(c *gin.Context) {
 		c.SetCookie("refresh_token", refresh, 31*24*60*60, "/", "localhost:8080", false, true)
 
 		c.JSON(http.StatusOK, gin.H{"success": "Вход выполнен!", "checked": checked})
+		c.Redirect(http.StatusMovedPermanently, "https://id.zentas.ru/")
 		return
 	}
 
@@ -91,6 +92,8 @@ func StdLoginStep2Api(c *gin.Context) {
 		c.SetCookie("refresh_token", refresh, 31*24*60*60, "/", "localhost:8080", false, true)
 
 		c.JSON(http.StatusOK, gin.H{"success": "Вход выполнен!", "checked": checked})
+		c.Redirect(http.StatusMovedPermanently, "https://id.zentas.ru/")
+
 		return
 	}
 
