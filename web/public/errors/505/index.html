@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Страница не найдена</title>
+	<title>Server internal error</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
@@ -30,28 +30,14 @@
 	<div id="notfound">
 		<div class="notfound">
 			<div class="notfound-404">
-				<h3>Oops! Page not found</h3>
-				<h1><span>4</span><span>0</span><span>4</span></h1>
+				<h3>Oops! Server internal error</h3>
+				<h1><span>5</span><span>0</span><span>0</span></h1>
 			</div>
-			<h2>Извините, кажется такой страницы не существует. Переадресация на предыдущую через <span id="second"></span> сек...</h2>
+			<h2>Извините, кажется сервер не отвечает. Следите за статусом работу в <a href="https://t.me/">Telegram</a></h2>
 		</div>
 	</div>
 	<script>
-		let second = document.getElementById("second");
-
-        let timeLeft = 7;
-
-        function countdown() {
-            if (timeLeft >= 0) {
-                second.innerHTML = timeLeft; 
-                timeLeft--; 
-            } else {
-                clearInterval(timerId); 
-				window.history.back();
-
-            }
-        }
-		let timerId = setInterval(countdown, 1000);
+		
 
 	</script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
