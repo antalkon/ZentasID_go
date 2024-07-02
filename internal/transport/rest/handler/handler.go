@@ -6,6 +6,7 @@ import (
 	"github.com/antalkon/ZentasID_go/internal/services/refreshToken"
 	userdata "github.com/antalkon/ZentasID_go/internal/services/userData"
 	"github.com/antalkon/ZentasID_go/internal/transport/rest/handler/auth"
+	"github.com/antalkon/ZentasID_go/internal/transport/rest/handler/erors"
 	"github.com/antalkon/ZentasID_go/internal/transport/rest/handler/personal"
 	"github.com/gin-gonic/gin"
 )
@@ -88,4 +89,7 @@ func (h *Handler) UpdateUserAvatar(c *gin.Context) {
 }
 func (h *Handler) GetUserAvatar(c *gin.Context) {
 	userdata.GetUserAvatar(c)
+}
+func (h *Handler) NonFound(c *gin.Context) {
+	erors.NonFoundPage(c)
 }

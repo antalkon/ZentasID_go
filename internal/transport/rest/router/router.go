@@ -10,6 +10,9 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 	router.GET("/", h.HomePage)
 	router.Static("/assets", "web/public/personal/assets")
 
+	router.NoRoute(h.NonFound)
+	router.Static("/errors/assets/404", "web/public/errors/404/assets")
+
 	auth := router.Group("/auth")
 	{
 		auth.GET("/", h.AuthPage)
