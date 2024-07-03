@@ -93,3 +93,6 @@ func (h *Handler) GetUserAvatar(c *gin.Context) {
 func (h *Handler) NonFound(c *gin.Context) {
 	erors.NonFoundPage(c)
 }
+func (h *Handler) NewSetting(c *gin.Context) {
+	userdata.UserEditSettings(c)
+}

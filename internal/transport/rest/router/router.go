@@ -43,6 +43,7 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 			dataApi.POST("/info", h.UserInfo)
 			dataApi.PUT("/avatar", h.UpdateUserAvatar)
 			dataApi.POST("/avatar", h.GetUserAvatar)
+			dataApi.POST("/settings", h.NewSetting)
 		}
 	}
 	storage := router.Group("/storage")
