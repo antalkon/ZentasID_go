@@ -1,6 +1,7 @@
 package handler
 
 import (
+	oauth "github.com/antalkon/ZentasID_go/internal/services/OAuth"
 	"github.com/antalkon/ZentasID_go/internal/services/auth/login"
 	"github.com/antalkon/ZentasID_go/internal/services/auth/reg"
 	"github.com/antalkon/ZentasID_go/internal/services/refreshToken"
@@ -95,4 +96,9 @@ func (h *Handler) NonFound(c *gin.Context) {
 }
 func (h *Handler) NewSetting(c *gin.Context) {
 	userdata.UserEditSettings(c)
+}
+
+// OAuthLinkParm
+func (h *Handler) OAuthLinkParm(c *gin.Context) {
+	oauth.OAuthLink(c)
 }

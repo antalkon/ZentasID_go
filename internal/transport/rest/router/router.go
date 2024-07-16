@@ -33,6 +33,14 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 			authApi.GET("/login/qr/authorization/:token", h.QrLoginGet)
 			authApi.GET("/refresh", h.RefreshToken)
 
+			OAuthApi := authApi.Group("/OAuth")
+			{
+				OAuthApi_v1 := OAuthApi.Group("/v1")
+				{
+					OAuthApi_v1.GET("/auth", h.OAuthLinkParm)
+				}
+			}
+
 		}
 
 	}
