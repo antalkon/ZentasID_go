@@ -15,7 +15,7 @@ func SaveUserLoginTempCode(id, code string) error {
 	}
 
 	// Проверяем, существует ли запись с данным userid
-	checkQuery := `SELECT COUNT(*) FROM tempLoginCode WHERE userid = $1`
+	checkQuery := `SELECT COUNT(*) FROM templogincode WHERE userid = $1`
 	var count int
 	err := db.QueryRow(checkQuery, id).Scan(&count)
 	if err != nil {
@@ -23,14 +23,14 @@ func SaveUserLoginTempCode(id, code string) error {
 	}
 	// Если запись существует, удаляем её
 	if count > 0 {
-		deleteQuery := `DELETE FROM tempLoginCode WHERE userid = $1`
+		deleteQuery := `DELETE FROM templogincode WHERE userid = $1`
 		_, err := db.Exec(deleteQuery, id)
 		if err != nil {
 			return fmt.Errorf("error deleting existing record: %v", err)
 		}
 	}
 	// Вставляем новую запись
-	query := `INSERT INTO tempLoginCode (userid, code, time) VALUES ($1, $2, CURRENT_TIMESTAMP)`
+	query := `INSERT INTO templogincode (userid, code, time) VALUES ($1, $2, CURRENT_TIMESTAMP)`
 	_, err = db.Exec(query, id, code)
 	if err != nil {
 		return fmt.Errorf("error inserting record into the database: %v", err)
