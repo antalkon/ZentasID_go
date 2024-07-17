@@ -17,6 +17,7 @@ func CreateOauth(user models.UserInfo) (string, error) {
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"userDisplay": user.DisplayID,
+		"userId":      user.UserID,
 		"userName":    user.Name,
 		"userSurname": user.Surname,
 		"userPhone":   user.Phone,
