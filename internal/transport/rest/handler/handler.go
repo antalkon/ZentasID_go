@@ -102,3 +102,8 @@ func (h *Handler) NewSetting(c *gin.Context) {
 func (h *Handler) OAuthLinkParm(c *gin.Context) {
 	oauth.OAuthLink(c)
 }
+
+// OAuthDataInfo
+func (h *Handler) OAuthDataInfo(c *gin.Context) {
+	oauth.OAuthDataInfo(c)
+}

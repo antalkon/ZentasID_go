@@ -12,6 +12,7 @@ import (
 )
 
 func OAuthLink(c *gin.Context) {
+
 	appId := c.Query("id")
 
 	userAccess, err := c.Cookie("access_token")
@@ -105,6 +106,6 @@ func OAuthLink(c *gin.Context) {
 
 	link := fmt.Sprintf(`%s?q=%s&refresh=%s`, redirectLink, JWT, refreshToken)
 
-	// c.Redirect(http.StatusMovedPermanently, link)
-	c.JSON(http.StatusOK, gin.H{"link": link})
+	c.Redirect(http.StatusMovedPermanently, link)
+	// c.JSON(http.StatusOK, gin.H{"link": link})
 }
