@@ -38,6 +38,10 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 				OAuthApi_v1 := OAuthApi.Group("/v1")
 				{
 					OAuthApi_v1.GET("/auth", h.OAuthLinkParm)
+					OAuthApi_v1_data := OAuthApi_v1.Group("/data")
+					{
+						OAuthApi_v1_data.GET("/info", h.OAuthDataInfo)
+					}
 				}
 			}
 
