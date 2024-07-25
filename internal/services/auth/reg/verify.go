@@ -17,12 +17,19 @@ func VerifyEmailApi(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Ошибка декодирования токена"})
 		return
 	}
-
+	token, err := regapi_pg.GetTokenById(decodedToken.UserID)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Неверная ссылка", "err": err})
+		return
+	}
+	if tokenLink != token {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Неверная ссылка"})
+		return
+	}
 	updateDB, err := regapi_pg.DbVerify(decodedToken.UserID)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-
 	c.JSON(http.StatusOK, gin.H{"message": "Токен успешно верифицирован", "updateDB": updateDB})
 }
