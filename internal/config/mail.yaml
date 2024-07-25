@@ -1,3 +1,4 @@
-host: "smtp.example.com"
-port: 587
+host: "smtp.mail.ru"
+port: 465
+
 
