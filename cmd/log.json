@@ -1,0 +1,10 @@
+{"time":"2024-07-25T09:50:30.729989+05:00","level":"INFO","msg":"Aplication Started.","env":"local"}
+{"time":"2024-07-25T09:59:51.364261+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T10:00:48.661315+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T10:01:22.645693+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T10:02:15.541576+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T10:02:33.997626+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T10:03:11.305625+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T10:03:49.601576+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T10:04:52.489542+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T10:04:52.490584+05:00","level":"INFO","msg":"--- Server Started ---"}

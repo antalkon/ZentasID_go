@@ -2,13 +2,13 @@
 package app
 
 import (
-	log2 "log"
 	"log/slog"
 
 	"github.com/antalkon/ZentasID_go/internal/transport/rest/handler"
 	"github.com/antalkon/ZentasID_go/internal/transport/rest/router"
 	"github.com/antalkon/ZentasID_go/pkg/config"
 	"github.com/antalkon/ZentasID_go/pkg/connectDB"
+	"github.com/antalkon/ZentasID_go/pkg/logger"
 )
 
 func Main() {
@@ -16,14 +16,15 @@ func Main() {
 	address := cfg.HTTPServer.Address
 
 	// Setup logger
-	log := SetupLogger(cfg.Env)
-	log.Info("Starting app", slog.String("env", cfg.Env))
+	log := logger.SetupLogger(cfg.Env)
+	log.Info("Logger session started.", slog.String("env", cfg.Env))
+	log.Info("--- Server Started ---")
 
 	// Initialize database
 	connectDB.InitDB()
 	connection, err := Db(cfg.Env, "development")
 	if err != nil {
-		log2.Fatalf("Ошибка при подключении к базе данных %v", err)
+		log.Error("DB fatal error. Db not started. LOG:", err)
 	}
 	_ = connection
 	// Setup GIN
@@ -31,10 +32,10 @@ func Main() {
 	r := router.SetupRouter(h)
 
 	if address == "" {
-		log2.Fatal("Failed to run server: Address is empty. \n pls. check config files")
+		log.Error("Failed start server: Adres is no empty.")
 	}
 
 	if err := r.Run(address); err != nil {
-		log2.Fatalf("Failed to run server: %s", err)
+		log.Error("Failed run server. LOG:", err)
 	}
 }
