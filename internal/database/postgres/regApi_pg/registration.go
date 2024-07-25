@@ -15,12 +15,12 @@ func DbRegistr(regUser models.RegUser) (string, error) {
 		return "", errors.New("failed to connect to the database")
 	}
 	query := `
-    INSERT INTO users (userid, displayid, email, phone, name, surname, joindate, verify)
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`
+    INSERT INTO users (userid, displayid, nickname, username, usersurname, userbirthday, useremail, userphone, regdate)
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`
 
-	_, err := db.Exec(query, regUser.UserID, regUser.DisplayID, regUser.Email, regUser.Phone, regUser.Name, regUser.Surname, regUser.JoinDate, regUser.Verify)
+	_, err := db.Exec(query, regUser.UserID, regUser.DisplayID, regUser.NickName, regUser.UserName, regUser.UserSurname, regUser.UserBirthday, regUser.UserEmail, regUser.UserPhone, regUser.RegDate)
 	if err != nil {
-		return "", fmt.Errorf("error inserting record into the database: %v", err)
+		return "", fmt.Errorf("Ошибка сохранения в БД: %v", err)
 	}
 
 	success := "Data successfully inserted into the database"

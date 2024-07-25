@@ -11,5 +11,5 @@ func GenerateRandomNumber() int {
 	rand.Seed(time.Now().UnixNano())
 
 	// Генерируем случайное число в диапазоне от 100000 до 999999 (включительно)
-	return rand.Intn(900000) + 100000
+	return rand.Intn(900000) + 000001
 }

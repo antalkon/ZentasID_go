@@ -12,7 +12,8 @@ func DbVerify(id string) (string, error) {
 	if db == nil {
 		return "", errors.New("failed to connect to the database")
 	}
-	query := `UPDATE users SET verify = true WHERE userid = $1`
+	query := `UPDATE users SET emailVerify = true, userActivate = true WHERE userid = $1;
+	`
 	_, err := db.Exec(query, id)
 	if err != nil {
 		return "", fmt.Errorf("error inserting record into the database: %v", err)
