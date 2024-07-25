@@ -9,6 +9,7 @@ import (
 	"github.com/antalkon/ZentasID_go/pkg/config"
 	"github.com/antalkon/ZentasID_go/pkg/connectDB"
 	"github.com/antalkon/ZentasID_go/pkg/logger"
+	z_validator "github.com/antalkon/ZentasID_go/pkg/validator"
 )
 
 func Main() {
@@ -27,6 +28,9 @@ func Main() {
 		log.Error("DB fatal error. Db not started. LOG:", err)
 	}
 	_ = connection
+
+	// Initializete Validator
+	z_validator.InitValidator()
 	// Setup GIN
 	h := handler.NewHandler()
 	r := router.SetupRouter(h)

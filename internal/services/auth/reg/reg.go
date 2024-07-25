@@ -33,6 +33,10 @@ func RegistrationApi(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
+	if err := models.ValidateUser(regUser); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"validate error: ": err.Error(), "error": "Ошибка валидации: Не все поля заполнены или содержат неверные значения."})
+		return
+	}
 	regUser.UserID = userID
 	regUser.DisplayID = displayID
 	regUser.Verify = verify
