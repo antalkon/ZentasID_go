@@ -1,6 +1,6 @@
-host: '127.0.0.1'
-port: '5434'
+host: '95.142.42.57'
+port: '5432'
 user: 'postgres'
 sslMode: 'disable'
-dbname: 'ZID'
+dbname: 'zid_server'
 
