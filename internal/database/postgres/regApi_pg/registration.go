@@ -25,5 +25,5 @@ func DbRegistr(regUser models.RegUser) (string, error) {
 
 	success := "Data successfully inserted into the database"
 	log.Println(success)
-	return success, nil
+	return "success", nil
 }

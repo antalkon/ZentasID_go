@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  front:
+    image: mailu/nginx:latest
+    container_name: mailu_front
+    restart: always
+    ports:
+      - "80:80"
+      - "443:444"
+    volumes:
+      - mailu_data:/data
+      - mailu_certs:/certs
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+      - DOMAIN=${DOMAIN}
+      - HOSTNAMES=${HOSTNAMES}
+      - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+      - LETSENCRYPT_TEST=${LETSENCRYPT_TEST}
+
+  admin:
+    image: mailu/admin:latest
+    container_name: mailu_admin
+    restart: always
+    depends_on:
+      - front
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+      - DOMAIN=${DOMAIN}
+    volumes:
+      - mailu_data:/data
+
+  # Добавьте другие сервисы Mailu по мере необходимости
+
+volumes:
+  mailu_data:
+  mailu_certs:

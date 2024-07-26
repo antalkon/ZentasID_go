@@ -48,3 +48,61 @@
 {"time":"2024-07-25T17:49:56.206661+05:00","level":"INFO","msg":"--- Server Started ---"}
 {"time":"2024-07-25T17:51:01.476462+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
 {"time":"2024-07-25T17:51:01.476957+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T19:34:14.347704+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T19:34:14.348282+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:03:50.963045+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:03:50.964292+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:09:00.831903+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:09:00.832478+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:09:57.082571+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:09:57.083138+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:11:19.204449+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:11:19.205007+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:12:34.447099+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:12:34.447669+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:13:52.085301+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:13:52.085759+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:14:41.499645+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:14:41.500707+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:15:30.43104+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:15:30.43162+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:19:17.585631+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:19:17.586188+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:20:10.31543+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:20:10.315939+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:22:37.834952+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:22:37.835592+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:26:48.30073+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:26:48.301327+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:28:02.298493+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:28:02.299035+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:30:08.846834+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:30:08.847458+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:31:35.683992+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:31:35.684607+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:34:39.261473+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:34:39.262059+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:36:56.526647+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:36:56.527247+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:40:31.848882+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:40:31.850053+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T20:43:01.651801+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T20:43:01.652842+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T21:08:26.362349+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T21:08:26.363542+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-25T21:16:19.148619+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-25T21:16:19.149256+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-26T13:48:58.210495+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-26T13:48:58.210565+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-26T13:50:23.00385+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-26T13:50:23.004926+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-26T13:52:04.107562+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-26T13:52:04.108111+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-26T14:07:20.097001+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-26T14:07:20.097668+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-26T14:24:47.707704+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-26T14:24:47.708292+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-26T14:30:49.285947+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-26T14:30:49.28655+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-07-26T14:43:57.68782+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-07-26T14:43:57.68851+05:00","level":"INFO","msg":"--- Server Started ---"}

@@ -3,6 +3,7 @@ package connectDB
 import (
 	"database/sql"
 	"log"
+	"time"
 
 	"github.com/antalkon/ZentasID_go/pkg/config"
 	_ "github.com/lib/pq" // импортируем драйвер PostgreSQL
@@ -21,6 +22,11 @@ func InitDB() {
 	if err != nil {
 		log.Fatalf("Ошибка при открытии соединения: %v", err)
 	}
+
+	// Устанавливаем параметры пула соединений
+	db.SetMaxOpenConns(100)                 // Максимальное количество открытых соединений
+	db.SetMaxIdleConns(10)                  // Максимальное количество неактивных соединений
+	db.SetConnMaxLifetime(30 * time.Minute) // Максимальная продолжительность использования соединения
 
 	err = db.Ping()
 	if err != nil {
