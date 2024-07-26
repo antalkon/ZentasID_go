@@ -15,3 +15,13 @@ func GenerateUserID() (string, error) {
 	key := uuidObj.String()
 	return key[:16], nil
 }
+
+func GenerateUserNick() (string, error) {
+	uuidObj, err := uuid.NewRandom()
+	if err != nil {
+		return "", fmt.Errorf("failed to generate UUID: %v", err)
+	}
+
+	key := uuidObj.String()
+	return key[:10], nil
+}

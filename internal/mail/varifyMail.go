@@ -8,7 +8,7 @@ import (
 	"gopkg.in/gomail.v2"
 )
 
-func VerifyMail(token, email string) error {
+func VerifyMail(token, email, name string) error {
 	// Загрузите конфигурацию
 	mailConfig, err := mail_config.ReadConfigMAIL()
 	if err != nil {
@@ -22,20 +22,20 @@ func VerifyMail(token, email string) error {
 
 	// Создайте новое письмо
 	m := gomail.NewMessage()
-	m.SetHeader("From", smtpUser)
+	m.SetHeader("From", m.FormatAddress(smtpUser, "Зентас ID"))
 	m.SetHeader("To", email) // Замените на email получателя
-	m.SetHeader("Subject", "Greetings!")
-	verificationURL := fmt.Sprintf("https://localhost:8080/auth/api/verify/%s", token)
+	m.SetHeader("Subject", "Подтверждение электронной почты")
+	verificationURL := fmt.Sprintf("https://localhost:8080/auth/api/v1/verify/%s", token)
 	messageBody := fmt.Sprintf(`
         <html>
         <body>
-            <p>Hello,</p>
-            <p>Please verify your email by clicking the following link:</p>
+            <h1>Здраствуйте, %s!</p>
+            <p>Пожалуйста подтвердите свой электронный адрес для активации аккаунта по ссылки:</p>
             <a href="%s">%s</a>
-            <p>Thank you!</p>
+            <h2>Спасибо!</p>
         </body>
         </html>
-    `, verificationURL, verificationURL)
+    `, name, verificationURL, verificationURL)
 	m.SetBody("text/html", messageBody)
 	// Создайте новый SMTP диалект
 	d := gomail.NewDialer(smtpServer, smtpPort, smtpUser, smtpPassword)
