@@ -3,3 +3,5 @@ go.sum
 .env
 dockerfile
 build/ssl.txt
+build/zentas.ru.crt
+build/zentas.ru.key

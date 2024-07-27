@@ -17,8 +17,8 @@ func VerifyMail(token, email, name string) error {
 
 	smtpServer := mailConfig.Host
 	smtpPort := mailConfig.Port
-	smtpUser := "verify@zentas.ru" // Замените на ваш email
-	smtpPassword := ""             // Замените на ваш пароль
+	smtpUser := "verify@zentas.ru"         // Замените на ваш email
+	smtpPassword := "Yp60Y2sgtRg6twJisyay" // Замените на ваш пароль
 
 	// Создайте новое письмо
 	m := gomail.NewMessage()

@@ -7,11 +7,21 @@ import (
 
 func SetupRouter(h *handler.Handler) *gin.Engine {
 	router := gin.New()
-	router.GET("/", h.HomePage)
-	router.Static("/assets", "web/public/personal/assets")
+	router.LoadHTMLGlob("web/public/*/*")
+	router.Static("/errors", "web/errors/404")
 
 	router.NoRoute(h.NonFound)
-	router.Static("/errors/assets/404", "web/public/errors/404/assets")
+
+	router.Static("/static", "web/static")
+	router.Static("/staticmain", "web/static/assets")
+
+	// router.GET("/", h.HomePage)
+
+	pagesID := router.Group("/")
+	{
+		pagesID.GET("/", h.HomePage)
+
+	}
 
 	auth := router.Group("/auth")
 	{
