@@ -9,7 +9,7 @@ import (
 )
 
 func NonFoundPage(c *gin.Context) {
-	staticDir := "web/public/errors/404"
+	staticDir := "web/errors/404"
 
 	// Проверяем существование папки
 	if _, err := os.Stat(staticDir); os.IsNotExist(err) {

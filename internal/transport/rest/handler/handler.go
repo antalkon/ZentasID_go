@@ -4,11 +4,11 @@ import (
 	oauth "github.com/antalkon/ZentasID_go/internal/services/OAuth"
 	"github.com/antalkon/ZentasID_go/internal/services/auth/login"
 	"github.com/antalkon/ZentasID_go/internal/services/auth/reg"
+	"github.com/antalkon/ZentasID_go/internal/services/pages"
 	"github.com/antalkon/ZentasID_go/internal/services/refreshToken"
 	userdata "github.com/antalkon/ZentasID_go/internal/services/userData"
 	"github.com/antalkon/ZentasID_go/internal/transport/rest/handler/auth"
 	"github.com/antalkon/ZentasID_go/internal/transport/rest/handler/erors"
-	"github.com/antalkon/ZentasID_go/internal/transport/rest/handler/personal"
 	"github.com/gin-gonic/gin"
 )
 
@@ -79,11 +79,6 @@ func (h *Handler) UserInfo(c *gin.Context) {
 	userdata.UserInfo(c)
 }
 
-// UPersona; hoeme
-func (h *Handler) HomePage(c *gin.Context) {
-	personal.HomePage(c)
-}
-
 // Edit user Avatar
 func (h *Handler) UpdateUserAvatar(c *gin.Context) {
 	userdata.UserEditAvatar(c)
@@ -106,4 +101,8 @@ func (h *Handler) OAuthLinkParm(c *gin.Context) {
 // OAuthDataInfo
 func (h *Handler) OAuthDataInfo(c *gin.Context) {
 	oauth.OAuthDataInfo(c)
+}
+
+func (h *Handler) HomePage(c *gin.Context) {
+	pages.HomePage(c)
 }
