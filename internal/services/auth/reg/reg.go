@@ -85,6 +85,6 @@ func RegistrationApi(c *gin.Context) {
 
 	// Если успешно - возвращаем.
 	c.JSON(http.StatusOK, gin.H{
-		"message": "Success",
+		"message": "Чтобы завершить регистрацию, перейдите по ссылке которая была отправлена на вашу почту.",
 	})
 }

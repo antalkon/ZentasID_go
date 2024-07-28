@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="static/m-css/style.css">
+    
+
+</head>
+<body>
+  <div class="regModal" id="regModal">
+    <div class="rmWindow">Для активации аккаунта перейдите по ссылке из письма которое пришло на вашу почту. <br> Если письмо не пришло напишите в поддержку.</div>
+  </div>
+  <div id="alertBox_su" class="fixed bottom-[1%] right-[1%] hidden">
+    <div class="flex w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 suAlert">
+      <div class="flex items-center justify-center w-12 bg-emerald-500">
+        <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM16.6667 28.3333L8.33337 20L10.6834 17.65L16.6667 23.6166L29.3167 10.9666L31.6667 13.3333L16.6667 28.3333Z" />
+        </svg>
+      </div>
+  
+      <div class="px-4 py-2 -mx-3">
+        <div class="mx-3">
+          <span class="font-semibold text-emerald-500 dark:text-emerald-400">Успешно</span>
+          <p class="text-sm text-gray-600 dark:text-gray-200" id="suText"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="alertBox_er" class="fixed bottom-[1%] right-[1%] hidden">
+    <div class="flex w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div class="flex items-center justify-center w-12 bg-red-500">
+        <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z" />
+        </svg>
+    </div>
+
+    <div class="px-4 py-2 -mx-3">
+        <div class="mx-3">
+            <span class="font-semibold text-red-500 dark:text-red-400">Ошибка</span>
+            <p class="text-sm text-gray-600 dark:text-gray-200" id="erText">
+                Your email is already used!
+            </p>
+        </div>
+    </div>  
+</div>
+  </div>
+  <div id="alertBox_wa" class="fixed bottom-[1%] right-[1%] hidden">
+    <div class="flex w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+      <div class="flex items-center justify-center w-12 bg-yellow-400">
+          <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM21.6667 28.3333H18.3334V25H21.6667V28.3333ZM21.6667 21.6666H18.3334V11.6666H21.6667V21.6666Z" />
+          </svg>
+      </div>
+  
+      <div class="px-4 py-2 -mx-3">
+          <div class="mx-3">
+              <span class="font-semibold text-yellow-400 dark:text-yellow-300">Предупреждение</span>
+              <p class="text-sm text-gray-600 dark:text-gray-200" id="waText">
+                  Your image size is too large!
+              </p>
+          </div>
+      </div>
+  </div>
+  </div>
+
+    <!--
+  Heads up! 👋
+
+  Plugins:
+    - @tailwindcss/forms
+-->
+<section class="bg-white">
+  <div class="lg:grid lg:min-h-screen lg:grid-cols-12">
+    <aside class="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6">
+      <img alt="" src="static/m-images/photo.jpg" class="absolute inset-0 h-full w-full object-cover rounded-l-3xl" />
+    </aside>
+
+    <main class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
+      <div class="max-w-xl lg:max-w-3xl">
+        <a class="block text-blue-600" href="#">
+          <span class="sr-only">Home</span>
+          <img src="static/m-images/logo.png" alt="" class="h-8 sm:h-10" />
+        </a>
+
+        <h1 class="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
+          Регистрация аккаунта Зентас ID
+        </h1>
+
+        <p class="mt-4 leading-relaxed text-gray-500">
+          Зентас ID - единый ключ ко всем сервисам экосистемы Зентас!
+        </p>
+
+        <form id="registrationForm" class="mt-8 grid grid-cols-6 gap-6">
+          <div class="col-span-6 sm:col-span-3">
+            <label for="FirstName" class="block text-sm font-medium text-gray-700"> Имя </label>
+            <input type="text" id="FirstName" name="first_name" class="mt-1 w-full rounded-md border-gray-200 bg-white text-lg text-gray-700 shadow-sm drop-shadow-md h-[40px]" />
+          </div>
+        
+          <div class="col-span-6 sm:col-span-3">
+            <label for="LastName" class="block text-sm font-medium text-gray-700"> Фамилия </label>
+            <input type="text" id="LastName" name="last_name" class="mt-1 w-full rounded-md border-gray-200 bg-white text-lg text-gray-700 shadow-sm drop-shadow-md h-[40px]" />
+          </div>
+        
+          <div class="col-span-6">
+            <label for="Email" class="block text-sm font-medium text-gray-700"> Email </label>
+            <input type="email" id="Email" name="email" class="mt-1 w-full rounded-md border-gray-200 bg-white text-lg text-gray-700 shadow-sm drop-shadow-md h-[40px]" />
+          </div>
+        
+          <div class="col-span-6">
+            <label for="Phone" class="block text-sm font-medium text-gray-700"> Номер телефона </label>
+            <input type="phone" id="Phone" name="phone" class="mt-1 w-full rounded-md border-gray-200 bg-white text-lg text-gray-700 shadow-sm drop-shadow-md h-[40px]" />
+          </div>
+        
+          <div class="col-span-6 sm:col-span-3">
+            <label for="Date" class="block text-sm font-medium text-gray-700"> Дата рождения </label>
+            <input type="date" id="Date" name="date" class="mt-1 w-full rounded-md border-gray-200 bg-white text-lg text-gray-700 shadow-sm drop-shadow-md h-[40px]" />
+          </div>
+        
+          <div class="col-span-6">
+            <label for="MarketingAccept" class="flex gap-4">
+              <input type="checkbox" id="MarketingAccept" name="marketing_accept" class="size-5 rounded-md border-gray-200 bg-white shadow-sm" />
+              <span class="text-sm text-gray-700"> Получать на почту рассылки с новостями и информацией. </span>
+            </label>
+          </div>
+          <div class="col-span-6">
+            <p class="text-sm text-gray-500">
+              Создавая аккаунт вы соглашаитесь с
+              <a href="#" class="text-gray-700 underline"> Условиями сервиса </a>
+              and
+              <a href="#" class="text-gray-700 underline">Политикой конфиденциальности</a>.
+            </p>
+          </div>
+
+          <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+            <a onclick="Registration()" class="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white drop-shadow-md transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500">
+              Зарегистрироваться
+            </a>
+
+            <p class="mt-4 text-sm text-gray-500 sm:mt-0">
+              Уже есть аккаунт?
+              <a href="#" class="text-gray-700 underline">Вход</a>.
+            </p>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+</section>
+  <script src="static/m-scripts/reg.js"></script>
+</body>
+</html>
