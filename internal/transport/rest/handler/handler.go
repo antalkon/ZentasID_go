@@ -106,3 +106,6 @@ func (h *Handler) OAuthDataInfo(c *gin.Context) {
 func (h *Handler) HomePage(c *gin.Context) {
 	pages.HomePage(c)
 }
+func (h *Handler) RegPage(c *gin.Context) {
+	pages.RegPage(c)
+}

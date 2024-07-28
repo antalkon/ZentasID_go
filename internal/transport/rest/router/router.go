@@ -20,6 +20,7 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 	pagesID := router.Group("/")
 	{
 		pagesID.GET("/", h.HomePage)
+		pagesID.GET("/registration", h.RegPage)
 
 	}
 

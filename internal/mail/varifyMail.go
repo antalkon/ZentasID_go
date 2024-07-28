@@ -25,7 +25,7 @@ func VerifyMail(token, email, name string) error {
 	m.SetHeader("From", m.FormatAddress(smtpUser, "Зентас ID"))
 	m.SetHeader("To", email) // Замените на email получателя
 	m.SetHeader("Subject", "Подтверждение электронной почты")
-	verificationURL := fmt.Sprintf("https://localhost:8080/auth/api/v1/verify/%s", token)
+	verificationURL := fmt.Sprintf("https://id.zentas.ru/auth/api/v1/verify/%s", token)
 	messageBody := fmt.Sprintf(`
         <html>
         <body>
