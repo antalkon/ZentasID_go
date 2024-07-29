@@ -15,7 +15,7 @@ func SaveRefreshToken(id, token string) error {
 
 	// Проверка наличия строки с указанным userId
 	var exists bool
-	checkQuery := `SELECT EXISTS(SELECT 1 FROM refreshTokens WHERE userId = $1)`
+	checkQuery := `SELECT EXISTS(SELECT 1 FROM userRefreshTokens WHERE userId = $1)`
 	err := db.QueryRow(checkQuery, id).Scan(&exists)
 	if err != nil {
 		return fmt.Errorf("error checking existing token: %v", err)
@@ -23,7 +23,7 @@ func SaveRefreshToken(id, token string) error {
 
 	// Если строка существует, удалить её
 	if exists {
-		deleteQuery := `DELETE FROM refreshTokens WHERE userId = $1`
+		deleteQuery := `DELETE FROM userRefreshTokens WHERE userId = $1`
 		_, err = db.Exec(deleteQuery, id)
 		if err != nil {
 			return fmt.Errorf("error deleting existing token: %v", err)
@@ -31,7 +31,7 @@ func SaveRefreshToken(id, token string) error {
 	}
 
 	// Вставка новой строки с userId, token и текущей меткой времени
-	insertQuery := `INSERT INTO refreshTokens (userId, token) VALUES ($1, $2)`
+	insertQuery := `INSERT INTO userRefreshTokens (userId, token) VALUES ($1, $2)`
 	_, err = db.Exec(insertQuery, id, token)
 	if err != nil {
 		return fmt.Errorf("error inserting new token: %v", err)

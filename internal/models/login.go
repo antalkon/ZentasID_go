@@ -1,5 +1,22 @@
 package models
 
+import z_validator "github.com/antalkon/ZentasID_go/pkg/validator"
+
+type LoginRequest struct {
+	Email string `json:"email"`
+	Phone string `json:"phone"`
+}
+type LoginFinal struct {
+	Code string `json:"code" validate:"len=6"`
+}
+
+func ValidateLoginRequest(user LoginRequest) error {
+	return z_validator.Validate.Struct(user)
+}
+func ValidateLoginFinal(user LoginFinal) error {
+	return z_validator.Validate.Struct(user)
+}
+
 type SLoginS1 struct {
 	Email string `json:"email"`
 	Phone string `json:"phone"`

@@ -1,4 +1,3 @@
-// internal/app/app.go
 package app
 
 import (
@@ -8,6 +7,7 @@ import (
 	"github.com/antalkon/ZentasID_go/internal/transport/rest/router"
 	"github.com/antalkon/ZentasID_go/pkg/config"
 	"github.com/antalkon/ZentasID_go/pkg/connectDB"
+	"github.com/antalkon/ZentasID_go/pkg/connectRedis"
 	"github.com/antalkon/ZentasID_go/pkg/logger"
 	z_validator "github.com/antalkon/ZentasID_go/pkg/validator"
 )
@@ -26,20 +26,26 @@ func Main() {
 	connection, err := Db(cfg.Env, "development")
 	if err != nil {
 		log.Error("DB fatal error. Db not started. LOG:", err)
+		return // Exit if DB initialization fails
 	}
 	_ = connection
 
-	// Initializete Validator
+	// Initialize Redis
+	connectRedis.InitRedis()
+
+	// Initializate Validator
 	z_validator.InitValidator()
+
 	// Setup GIN
 	h := handler.NewHandler()
 	r := router.SetupRouter(h)
 
 	if address == "" {
-		log.Error("Failed start server: Adres is no empty.")
+		log.Error("Failed start server: Address is empty.")
+		return // Exit if address is not specified
 	}
 
 	if err := r.Run(address); err != nil {
-		log.Error("Failed run server. LOG:", err)
+		log.Error("Failed to run server. LOG:", err)
 	}
 }

@@ -15,8 +15,6 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 	router.Static("/static", "web/static")
 	router.Static("/staticmain", "web/static/assets")
 
-	// router.GET("/", h.HomePage)
-
 	pagesID := router.Group("/")
 	{
 		pagesID.GET("/", h.HomePage)
@@ -37,14 +35,11 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 			{
 				authApi_v1.POST("/registration", h.RegApi)
 				authApi_v1.GET("/verify/:token", h.RegVerify)
+				authApi_v1.POST("/login/req", h.ReqLogin)
+				authApi_v1.POST("/login/final", h.FinalLogin)
 			}
-			authApi.POST("/login/standart/step1", h.SLoginS1)
-			authApi.POST("/login/standart/step2", h.SLoginS2)
+
 			authApi.GET("/logout", h.Logout)
-			// authApi.GET("/login/vk", h.VKLogin)
-			// authApi.GET("/login/yandex", h.YandexLogin)
-			authApi.POST("/login/qr", h.QrLoginGen)
-			authApi.GET("/login/qr/authorization/:token", h.QrLoginGet)
 			authApi.GET("/refresh", h.RefreshToken)
 
 			OAuthApi := authApi.Group("/OAuth")
