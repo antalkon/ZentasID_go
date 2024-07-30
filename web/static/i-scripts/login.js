@@ -16,6 +16,7 @@ async function postRequest(url, data) {
             document.getElementById("regModal").style.display = "flex"
             console.log(`Message: ${responseData.message}`);
             return
+            
         }
         if (responseData.error) {
             error_v(responseData.error)
