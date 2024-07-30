@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="static/i-css/style.css">
+
+</head>
+<body>
+    <div id="alertBox_su" class="fixed bottom-[1%] right-[1%] hidden">
+        <div class="flex w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 suAlert">
+          <div class="flex items-center justify-center w-12 bg-emerald-500">
+            <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM16.6667 28.3333L8.33337 20L10.6834 17.65L16.6667 23.6166L29.3167 10.9666L31.6667 13.3333L16.6667 28.3333Z" />
+            </svg>
+          </div>
+      
+          <div class="px-4 py-2 -mx-3">
+            <div class="mx-3">
+              <span class="font-semibold text-emerald-500 dark:text-emerald-400">Успешно</span>
+              <p class="text-sm text-gray-600 dark:text-gray-200" id="suText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div id="alertBox_er" class="fixed bottom-[1%] right-[1%] hidden">
+        <div class="flex w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <div class="flex items-center justify-center w-12 bg-red-500">
+            <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z" />
+            </svg>
+        </div>
+    
+        <div class="px-4 py-2 -mx-3">
+            <div class="mx-3">
+                <span class="font-semibold text-red-500 dark:text-red-400">Ошибка</span>
+                <p class="text-sm text-gray-600 dark:text-gray-200" id="erText">
+                    Your email is already used!
+                </p>
+            </div>
+        </div>  
+    </div>
+      </div>
+      <div id="alertBox_wa" class="fixed bottom-[1%] right-[1%] hidden">
+        <div class="flex w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+          <div class="flex items-center justify-center w-12 bg-yellow-400">
+              <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM21.6667 28.3333H18.3334V25H21.6667V28.3333ZM21.6667 21.6666H18.3334V11.6666H21.6667V21.6666Z" />
+              </svg>
+          </div>
+      
+          <div class="px-4 py-2 -mx-3">
+              <div class="mx-3">
+                  <span class="font-semibold text-yellow-400 dark:text-yellow-300">Предупреждение</span>
+                  <p class="text-sm text-gray-600 dark:text-gray-200" id="waText">
+                      Your image size is too large!
+                  </p>
+              </div>
+          </div>
+      </div>
+      </div>
+    
+    <main>
+        <div class="login">
+            <div class="loginForm">
+                <div class="mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-neutral-900 dark:border-neutral-700">
+                    <div class="p-4 sm:p-7">
+                      <div class="text-center">
+                        <h1 class="block text-2xl font-bold text-gray-800 dark:text-white">Вход в аккаунт</h1>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-neutral-400">
+                          Еще нет аккаунта?
+                          <a class="text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500" href="registration">
+                            Регистрация
+                          </a>
+                        </p>
+                      </div>
+                  
+                      <div class="mt-5">
+                        <!-- Form -->
+                          <div class="grid gap-y-4">
+                            <!-- Form Group -->
+                            <div>
+                              <label for="email" class="block text-sm mb-2 dark:text-white">Электронный адрес</label>
+                              <div class="relative">
+                                <input type="email" id="email" name="email" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" required aria-describedby="email-error">
+                                <div class="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
+                                  <svg class="size-5 text-red-500" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                                  </svg>
+                                </div>
+                              </div>
+                              <p class="hidden text-xs text-red-600 mt-2" id="email-error">Введите валидный Электронный адрес</p>
+                            </div>
+                            <!-- End Form Group -->
+                  
+                            <button onclick="Login()" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">Reset password</button>
+                          </div>
+                        
+                        <!-- End Form -->
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </main>
+    <script src="static/i-scripts/login.js"></script>
+    
+</body>
+</html>
