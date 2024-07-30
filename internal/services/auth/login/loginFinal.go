@@ -66,4 +66,6 @@ func FinalLogin(c *gin.Context) {
 	c.SetCookie("refresh_token", refresh, 31*24*60*60, "/", "localhost:8080", false, true)
 
 	c.JSON(http.StatusOK, gin.H{"success": "Вход выполнен!"})
+	c.Redirect(http.StatusMovedPermanently, "/")
+
 }

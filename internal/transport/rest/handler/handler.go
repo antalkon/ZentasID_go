@@ -88,3 +88,9 @@ func (h *Handler) ReqLogin(c *gin.Context) {
 func (h *Handler) FinalLogin(c *gin.Context) {
 	login.FinalLogin(c)
 }
+func (h *Handler) LoginPage(c *gin.Context) {
+	pages.LoginPage(c)
+}
+func (h *Handler) LoginFinPage(c *gin.Context) {
+	pages.LoginFinPage(c)
+}
