@@ -12,7 +12,9 @@ import (
 func FinalLogin(c *gin.Context) {
 	token, err := c.Cookie("id_login")
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err})
+		// c.JSON(http.StatusInternalServerError, gin.H{"error": "Сессия входа была закрыта."})
+		c.JSON(http.StatusInternalServerError, gin.H{"redirect": "Сессия входа была закрыта."})
+		// c.Redirect(http.StatusSeeOther, "https://id.zentas.ru/login")
 		return
 	}
 
@@ -65,7 +67,7 @@ func FinalLogin(c *gin.Context) {
 	c.SetCookie("access_token", access, 24*60*60, "/", "localhost:8080", false, true)
 	c.SetCookie("refresh_token", refresh, 31*24*60*60, "/", "localhost:8080", false, true)
 
-	c.JSON(http.StatusOK, gin.H{"success": "Вход выполнен!"})
-	c.Redirect(http.StatusMovedPermanently, "/")
+	c.JSON(http.StatusOK, gin.H{"success1": "Вход выполнен!"})
+	c.Redirect(http.StatusFound, "/")
 
 }

@@ -61,5 +61,6 @@ func LoginRequest(c *gin.Context) {
 	}(login.Email, code)
 
 	// Редирект
-	c.Redirect(http.StatusFound, "https://id.zentas.ru/login/2")
+	// c.Redirect(http.StatusFound, "https://id.zentas.ru/login/2")
+	c.JSON(http.StatusOK, gin.H{"redirect2": "sues"})
 }
