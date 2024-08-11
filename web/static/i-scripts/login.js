@@ -23,6 +23,18 @@ async function postRequest(url, data) {
             console.error(`Error: ${responseData.error}`);
             return
         }
+        if (responseData.redirect){
+                      window.location.href = "/login"
+
+        }
+        if (responseData.success1){
+          window.location.href = "/"
+
+}
+        if (responseData.redirect2){
+          window.location.href = "/login/2"
+
+}
         if (responseData.warn) {
             warning_v(responseData.warn)
             console.warn(`Warning: ${responseData.warn}`);
