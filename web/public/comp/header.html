@@ -1,85 +1,154 @@
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
-  <div class="navbar-start">
-      <div class="dropdown">
+
+<div class="navbar-start">
+    <div class="dropdown">
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h7" />
-          </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+            </svg>
         </div>
-        <ul
-          tabindex="0"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-          <li><a>Главная</a></li>
-          <li><a>Данные</a></li>
-          <li><a>Безопасность</a></li>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+            <li><a>Главная</a></li>
+            <li><a>Данные</a></li>
+            <li><a>Безопасность</a></li>
         </ul>
-      </div>
     </div>
-    <div class="navbar-center">
-      <a class="btn btn-ghost text-xl">Зентас ID</a>
-    </div>
-    <div class="navbar-end">
-      <button class="btn btn-ghost btn-circle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </button>
-      <button class="btn btn-ghost btn-circle">
-        <div class="indicator">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-          </svg>
-          <span class="badge badge-xs badge-primary indicator-item"></span>
+</div>
+
+<div class="navbar-center">
+    <a class="btn btn-ghost text-xl">Зентас ID</a>
+</div>
+
+<div class="navbar-end">
+    <!-- Dropdown with Notifications -->
+    <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle" >
+            <div class="indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                </svg>
+                <span class="badge badge-xs badge-primary indicator-item"></span>
+            </div>
         </div>
-      </button>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-72 p-2 shadow">
+            <li><a class="notification-trigger" data-notification="1">Новое сообщение <span class="badge">1</span></a></li>
+            <li><a class="notification-trigger" data-notification="2">Обновление системы</a></li>
+            <li><a class="notification-trigger" data-notification="3">Напоминание о событии</a></li>
+        </ul>
     </div>
+
+    <!-- Profile dropdown -->
     <div class="dropdown dropdown-end">
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-          <div class="w-10 rounded-full">
-            <img
-              alt="Tailwind CSS Navbar component"
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-          </div>
+            <div class="w-10 rounded-full">
+                <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+            </div>
         </div>
-        <ul
-          tabindex="0"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-          <li>
-            <a class="justify-between">
-              Профиль
-              <span class="badge">Новое</span>
-            </a>
-          </li>
-          <li><a>Параметры</a></li>
-          <li><a>Выход</a></li>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+            <li>
+                <a class="justify-between">Профиль<span class="badge">Новое</span></a>
+            </li>
+            <li><a>Параметры</a></li>
+            <li><a href="/auth/api/logout">Выход</a></li>
         </ul>
-      </div>
     </div>
+</div>
+
+<!-- Модальное окно -->
+<div id="notificationModal" class="modal">
+    <div class="modal-box max-w-5xl">
+        <h2 class="text-xl font-bold mb-4">Уведомления</h2>
+        <div id="notificationContent" class="modal-content">
+            <!-- Уведомления будут добавляться динамически -->
+        </div>
+        <div class="modal-action">
+            <button class="btn" onclick="closeModal()">Закрыть</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.notification-trigger').forEach(element => {
+        element.addEventListener('click', function() {
+            openModal(this.dataset.notification);
+        });
+    });
+
+    function openModal(notificationId) {
+        const notifications = {
+            '1': {
+                title: 'Новое сообщение',
+                description: 'Вам пришло новое сообщение.',
+                details: 'Это подробная информация о новом сообщении. dsfdsfsf'
+            },
+            '2': {
+                title: 'Обновление системы',
+                description: 'Система была обновлена.',
+                details: 'Это подробная информация об обновлении системы.'
+            },
+            '3': {
+                title: 'Напоминание о событии',
+                description: 'Не забудьте о предстоящем событии.',
+                details: 'Это подробная информация о напоминании.'
+            }
+        };
+
+        const contentDiv = document.getElementById('notificationContent');
+        contentDiv.innerHTML = '';
+
+        const notification = notifications[notificationId];
+        if (notification) {
+            contentDiv.innerHTML = `
+                <div class="notification-card bg-white shadow-md rounded-lg mb-4 p-4 cursor-pointer" onclick="showDetails('${notificationId}')">
+                    <div class="flex items-center">
+                        <img src="https://via.placeholder.com/50" alt="Notification Icon" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h3 class="text-lg font-semibold">${notification.title}</h3>
+                            <p class="text-sm text-gray-600">${notification.description}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        document.getElementById('notificationModal').classList.add('modal-open');
+    }
+
+    function closeModal() {
+        document.getElementById('notificationModal').classList.remove('modal-open');
+    }
+
+    function showDetails(notificationId) {
+        const notifications = {
+            '1': {
+                title: 'Новое сообщение',
+                details: 'Это подробная информация о новом сообщении.'
+            },
+            '2': {
+                title: 'Обновление системы',
+                details: 'Это подробная информация об обновлении системы.'
+            },
+            '3': {
+                title: 'Напоминание о событии',
+                details: 'Это подробная информация о напоминании.'
+            }
+        };
+
+        const notification = notifications[notificationId];
+        if (notification) {
+            const contentDiv = document.getElementById('notificationContent');
+            contentDiv.innerHTML = `
+                <div class="notification-card bg-white shadow-md rounded-lg mb-4 p-4">
+                    <div class="flex items-center">
+                        <img src="https://via.placeholder.com/50" alt="Notification Icon" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h3 class="text-lg font-semibold">${notification.title}</h3>
+                            <p class="text-sm text-gray-600">${notification.details}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    }
+</script>
