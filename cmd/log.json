@@ -211,3 +211,9 @@
 {"time":"2024-08-11T13:00:40.614285+05:00","level":"INFO","msg":"--- Server Started ---"}
 {"time":"2024-08-11T13:02:54.499422+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
 {"time":"2024-08-11T13:02:54.499487+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-08-12T11:13:15.797587+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-08-12T11:13:15.798287+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-08-12T11:16:14.523965+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-08-12T11:16:14.524549+05:00","level":"INFO","msg":"--- Server Started ---"}
+{"time":"2024-08-12T11:48:55.943088+05:00","level":"INFO","msg":"Logger session started.","env":"local"}
+{"time":"2024-08-12T11:48:55.943927+05:00","level":"INFO","msg":"--- Server Started ---"}
