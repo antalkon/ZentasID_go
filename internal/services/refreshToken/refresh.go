@@ -11,37 +11,37 @@ import (
 func RefreshToken(c *gin.Context) {
 	cookie, err := c.Cookie("refresh_token")
 	if err != nil {
-		c.Redirect(http.StatusMovedPermanently, "/auth")
+		c.Redirect(http.StatusMovedPermanently, "/login")
 		return
 	}
 
 	err = refreshApi_pg.CheckRefresh(cookie)
 	if err != nil {
-		c.Redirect(http.StatusMovedPermanently, "/auth")
+		c.Redirect(http.StatusMovedPermanently, "/login")
 		return
 	}
 
 	userId, err := jwt.DecodeRefreshToken(cookie)
 	if err != nil {
-		c.Redirect(http.StatusMovedPermanently, "/auth")
+		c.Redirect(http.StatusMovedPermanently, "/login")
 		return
 	}
 
 	refreshToken, err := jwt.GenerateRefreshToken(userId.Code)
 	if err != nil {
-		c.Redirect(http.StatusMovedPermanently, "/auth")
+		c.Redirect(http.StatusMovedPermanently, "/login")
 		return
 	}
 
 	accessToken, err := jwt.GenerateAccessToken(userId.Code)
 	if err != nil {
-		c.Redirect(http.StatusMovedPermanently, "/auth")
+		c.Redirect(http.StatusMovedPermanently, "/login")
 		return
 	}
 
 	err = refreshApi_pg.SvaeNewRefresh(userId.Code, refreshToken)
 	if err != nil {
-		c.Redirect(http.StatusMovedPermanently, "/auth")
+		c.Redirect(http.StatusMovedPermanently, "/login")
 		return
 	}
 
