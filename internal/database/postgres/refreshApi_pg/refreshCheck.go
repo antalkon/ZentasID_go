@@ -14,13 +14,13 @@ func CheckRefresh(token string) error {
 	}
 	// Проверка наличия строки с указанным userId
 	var exists bool
-	checkQuery := `SELECT EXISTS(SELECT 1 FROM refreshTokens WHERE token = $1)`
+	checkQuery := `SELECT EXISTS(SELECT 1 FROM userrefreshTokens WHERE token = $1)`
 	err := db.QueryRow(checkQuery, token).Scan(&exists)
 	if err != nil {
 		return fmt.Errorf("error checking existing token: %v", err)
 	}
 	if exists {
-		deleteQuery := `DELETE FROM refreshTokens WHERE token = $1`
+		deleteQuery := `DELETE FROM userrefreshTokens WHERE token = $1`
 		_, err = db.Exec(deleteQuery, token)
 		if err != nil {
 			return fmt.Errorf("error deleting existing token: %v", err)
@@ -34,7 +34,7 @@ func SvaeNewRefresh(id, token string) error {
 	if db == nil {
 		return errors.New("failed to connect to the database")
 	}
-	insertQuery := `INSERT INTO refreshTokens (userId, token) VALUES ($1, $2)`
+	insertQuery := `INSERT INTO userrefreshTokens (userId, token) VALUES ($1, $2)`
 	_, err := db.Exec(insertQuery, id, token)
 	if err != nil {
 		return fmt.Errorf("error inserting new token: %v", err)
