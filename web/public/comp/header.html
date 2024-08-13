@@ -1,5 +1,8 @@
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
+<!-- Подключение CSS и JS -->
+<link href="https://cdn.jsdelivr.net/npm/cropperjs@1.5.13/dist/cropper.min.css" rel="stylesheet"/>
+
 
 <div class="navbar-start">
     <div class="dropdown">
@@ -42,10 +45,12 @@
     <div class="dropdown dropdown-end">
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
             <div class="w-10 rounded-full">
-                <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                <img alt="Tailwind CSS Navbar component" id="ava" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
             </div>
         </div>
         <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+            <li><a id="openAvatarModal">Изменить аватар</a></li>
+
             <li>
                 <a class="justify-between">Профиль<span class="badge">Новое</span></a>
             </li>
@@ -152,3 +157,24 @@
         }
     }
 </script>
+
+
+
+
+<div id="avatarModal" class="modal">
+    <div class="modal-box max-w-3xl">
+        <h2 class="text-xl font-bold mb-4">Изменить аватар</h2>
+        <input type="file" id="avatarInput" accept="image/*" class="mb-4">
+        <div class="flex justify-center">
+            <img id="avatarPreview" class="rounded-full" style="max-width: 100%; max-height: 300px;">
+        </div>
+        <div class="modal-action">
+            <button id="cropButton" class="btn">Сохранить</button>
+            <button class="btn" onclick="closeAvatarModal()">Отмена</button>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/cropperjs@1.5.13/dist/cropper.min.js"></script>
+
+<script src="/static/js/uploadAvatar.js"></script>
+<script src="/static/js/avatarGetLink.js"></script>

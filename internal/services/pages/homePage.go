@@ -13,6 +13,7 @@ func HomePage(c *gin.Context) {
 	cookie, err := c.Cookie("access_token")
 	if err != nil {
 		// Если cookie нет, загружается index.html
+		c.Redirect(http.StatusMovedPermanently, "/auth/api/refresh")
 		c.HTML(http.StatusOK, "index.html", gin.H{
 			"title":   "Зентас English",
 			"favicon": "static/img/favicon.ico",
