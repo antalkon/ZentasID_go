@@ -16,3 +16,4 @@ fetch('/data/api/avatar', {
 .catch(error => {
     console.error('Ошибка:', error);
 });
+ 

@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <title>{{ .title }}</title>
     <link rel="shortcut icon" href="{{ .favicon }}" type="image/x-icon">
     <link rel="stylesheet" href="/static/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script src="//unpkg.com/alpinejs" defer></script>
 
 </head>
 <body>
     <div class="head">
         <div class="navbar bg-gray-200 rounded-lg mt-[3px] w-full">
-            <!-- Ваш контент -->
             {{ template "header.html" .}}
         </div>
     </div>

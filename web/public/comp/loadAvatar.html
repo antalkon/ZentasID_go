@@ -1,0 +1,31 @@
+<link href="https://cdn.jsdelivr.net/npm/cropperjs@1.5.13/dist/cropper.min.css" rel="stylesheet"/>
+
+
+<div id="avatarModal" class="modal">
+    <div class="modal-box max-w-3xl">
+        <h2 class="text-xl font-bold mb-4">Изменить аватар</h2>
+
+        <!-- Скрытый input для выбора файла -->
+        <div class="flex justify-center">
+            <input type="file" id="avatarInput" accept="image/*" class="hidden">
+            <label for="avatarInput" class="btn btn-primary text-white bg-blue-500 hover:bg-blue-600 cursor-pointer">
+                Выбрать аватар
+            </label>
+        </div>
+
+        <!-- Предпросмотр изображения -->
+        <div class="flex justify-center mt-4">
+            <img id="avatarPreview" class="rounded-full" style="max-width: 100%; max-height: 300px;">
+        </div>
+
+        <!-- Кнопки действия -->
+        <div class="modal-action">
+            <button id="cropButton" class="btn">Сохранить</button>
+            <button class="btn" onclick="closeAvatarModal()">Отмена</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/cropperjs@1.5.13/dist/cropper.min.js"></script>
+<script src="/static/js/uploadAvatar.js"></script>
