@@ -1,7 +1,5 @@
+<!-- IMPORT CDN'S-->
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- Подключение CSS и JS -->
-<link href="https://cdn.jsdelivr.net/npm/cropperjs@1.5.13/dist/cropper.min.css" rel="stylesheet"/>
 
 
 <div class="navbar-start">
@@ -18,13 +16,13 @@
         </ul>
     </div>
 </div>
-
 <div class="navbar-center">
-    <a class="btn btn-ghost text-xl">Зентас ID</a>
+    <img src="static/m-images/logo.png" alt="" style="height: 32px; max-height: 32px; cursor: pointer;">
 </div>
 
+
+
 <div class="navbar-end">
-    <!-- Dropdown with Notifications -->
     <div class="dropdown dropdown-end">
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle" >
             <div class="indicator">
@@ -36,8 +34,8 @@
         </div>
         <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-72 p-2 shadow">
             <li><a class="notification-trigger" data-notification="1">Новое сообщение <span class="badge">1</span></a></li>
-            <li><a class="notification-trigger" data-notification="2">Обновление системы</a></li>
-            <li><a class="notification-trigger" data-notification="3">Напоминание о событии</a></li>
+            <li><a class="notification-trigger" data-notification="2">Обновление системы <span class="badge">1</span></a></li>
+            <li><a class="notification-trigger" data-notification="3">Напоминание о событии <span class="badge">1</span></a></li>
         </ul>
     </div>
 
@@ -61,120 +59,11 @@
 </div>
 
 <!-- Модальное окно -->
-<div id="notificationModal" class="modal">
-    <div class="modal-box max-w-5xl">
-        <h2 class="text-xl font-bold mb-4">Уведомления</h2>
-        <div id="notificationContent" class="modal-content">
-            <!-- Уведомления будут добавляться динамически -->
-        </div>
-        <div class="modal-action">
-            <button class="btn" onclick="closeModal()">Закрыть</button>
-        </div>
-    </div>
-</div>
-
-<script>
-    document.querySelectorAll('.notification-trigger').forEach(element => {
-        element.addEventListener('click', function() {
-            openModal(this.dataset.notification);
-        });
-    });
-
-    function openModal(notificationId) {
-        const notifications = {
-            '1': {
-                title: 'Новое сообщение',
-                description: 'Вам пришло новое сообщение.',
-                details: 'Это подробная информация о новом сообщении. dsfdsfsf'
-            },
-            '2': {
-                title: 'Обновление системы',
-                description: 'Система была обновлена.',
-                details: 'Это подробная информация об обновлении системы.'
-            },
-            '3': {
-                title: 'Напоминание о событии',
-                description: 'Не забудьте о предстоящем событии.',
-                details: 'Это подробная информация о напоминании.'
-            }
-        };
-
-        const contentDiv = document.getElementById('notificationContent');
-        contentDiv.innerHTML = '';
-
-        const notification = notifications[notificationId];
-        if (notification) {
-            contentDiv.innerHTML = `
-                <div class="notification-card bg-white shadow-md rounded-lg mb-4 p-4 cursor-pointer" onclick="showDetails('${notificationId}')">
-                    <div class="flex items-center">
-                        <img src="https://via.placeholder.com/50" alt="Notification Icon" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h3 class="text-lg font-semibold">${notification.title}</h3>
-                            <p class="text-sm text-gray-600">${notification.description}</p>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        document.getElementById('notificationModal').classList.add('modal-open');
-    }
-
-    function closeModal() {
-        document.getElementById('notificationModal').classList.remove('modal-open');
-    }
-
-    function showDetails(notificationId) {
-        const notifications = {
-            '1': {
-                title: 'Новое сообщение',
-                details: 'Это подробная информация о новом сообщении.'
-            },
-            '2': {
-                title: 'Обновление системы',
-                details: 'Это подробная информация об обновлении системы.'
-            },
-            '3': {
-                title: 'Напоминание о событии',
-                details: 'Это подробная информация о напоминании.'
-            }
-        };
-
-        const notification = notifications[notificationId];
-        if (notification) {
-            const contentDiv = document.getElementById('notificationContent');
-            contentDiv.innerHTML = `
-                <div class="notification-card bg-white shadow-md rounded-lg mb-4 p-4">
-                    <div class="flex items-center">
-                        <img src="https://via.placeholder.com/50" alt="Notification Icon" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h3 class="text-lg font-semibold">${notification.title}</h3>
-                            <p class="text-sm text-gray-600">${notification.details}</p>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-    }
-</script>
+{{ template "notificationModal.html" .}}
 
 
+<!-- AVATAR MODAL -->
+{{ template "loadAvatar.html" .}}
 
-
-<div id="avatarModal" class="modal">
-    <div class="modal-box max-w-3xl">
-        <h2 class="text-xl font-bold mb-4">Изменить аватар</h2>
-        <input type="file" id="avatarInput" accept="image/*" class="mb-4">
-        <div class="flex justify-center">
-            <img id="avatarPreview" class="rounded-full" style="max-width: 100%; max-height: 300px;">
-        </div>
-        <div class="modal-action">
-            <button id="cropButton" class="btn">Сохранить</button>
-            <button class="btn" onclick="closeAvatarModal()">Отмена</button>
-        </div>
-    </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/cropperjs@1.5.13/dist/cropper.min.js"></script>
-
-<script src="/static/js/uploadAvatar.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 <script src="/static/js/avatarGetLink.js"></script>
