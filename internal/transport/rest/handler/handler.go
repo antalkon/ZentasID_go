@@ -94,3 +94,7 @@ func (h *Handler) LoginPage(c *gin.Context) {
 func (h *Handler) LoginFinPage(c *gin.Context) {
 	pages.LoginFinPage(c)
 }
+
+func (h *Handler) GenerateLoginLink(c *gin.Context) {
+	login.GenerateLoginLink(c)
+}
