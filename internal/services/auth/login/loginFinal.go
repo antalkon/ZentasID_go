@@ -64,8 +64,8 @@ func FinalLogin(c *gin.Context) {
 
 	// Отправка куков и ответа
 	c.SetCookie("id_login", "", -1, "/", "", false, true)
-	c.SetCookie("access_token", access, 24*60*60, "/", "localhost:8080", false, true)
-	c.SetCookie("refresh_token", refresh, 31*24*60*60, "/", "localhost:8080", false, true)
+	c.SetCookie("access_token", access, 24*60*60, "/", "localhost", false, true)
+	c.SetCookie("refresh_token", refresh, 31*24*60*60, "/", "localhost", false, true)
 
 	c.JSON(http.StatusOK, gin.H{"success1": "Вход выполнен!"})
 	c.Redirect(http.StatusFound, "/")

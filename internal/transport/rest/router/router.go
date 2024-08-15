@@ -39,6 +39,9 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 				authApi_v1.GET("/verify/:token", h.RegVerify)
 				authApi_v1.POST("/login/req", h.ReqLogin)
 				authApi_v1.POST("/login/final", h.FinalLogin)
+				authApi_v1.POST("/login/link", h.GenerateLoginLink)
+				authApi_v1.POST("/login/link/:code", h.GenerateLoginLink)
+
 			}
 
 			authApi.GET("/logout", h.Logout)
